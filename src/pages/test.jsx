@@ -1,11 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { GlobalContext } from '../context/GlobalContext';
 
 const Test = () => {
-  const { state } = useContext(GlobalContext);
-  console.log(state);
-  const { data } = state;
-  return <div>{data}</div>;
+  const { handler } = useContext(GlobalContext);
+  const { fetchDataFoods } = handler;
+
+  useEffect(() => {
+    const data = fetchDataFoods('apple');
+  }, []);
+  return <div>1</div>;
 };
 
 export default Test;

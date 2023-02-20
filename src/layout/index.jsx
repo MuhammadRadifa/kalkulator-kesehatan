@@ -1,3 +1,3 @@
-import Homepagelayout from './homepage/Homepage';
+import Homepagelayout from './Homepage/Homepage';
 
 export { Homepagelayout };

@@ -1,3 +1,4 @@
 import HomepagePages from './homepage/Homepage';
+import TestPages from './homepage/test';
 
-export { HomepagePages };
+export { HomepagePages, TestPages };

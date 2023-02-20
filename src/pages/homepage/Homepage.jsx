@@ -1,7 +1,7 @@
 import React from 'react';
-import Homepagelayout from '../../layout/homepage';
+import { Homepagelayout } from '../../layout';
 
-const Homepage = () => {
+const HomepagePages = () => {
   return (
     <div>
       <Homepagelayout>Hello World</Homepagelayout>
@@ -9,4 +9,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default HomepagePages;
