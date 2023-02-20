@@ -4,7 +4,7 @@ import { HomepagePages } from './pages';
 function App() {
   return (
     <Routes>
-      <Route path='/dash' element={<HomepagePages />} />
+      <Route path='/' element={<HomepagePages />} />
     </Routes>
   );
 }
