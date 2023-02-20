@@ -1,10 +1,18 @@
 import React from 'react';
+
+import { Hero, Kontak, Layanan, Tentang } from '../../components';
+
 import { Homepagelayout } from '../../layout';
 
 const HomepagePages = () => {
   return (
     <div>
-      <Homepagelayout>Hello World</Homepagelayout>
+      <Homepagelayout>
+        <Hero />
+        <Tentang />
+        <Layanan />
+        <Kontak />
+      </Homepagelayout>
     </div>
   );
 };
