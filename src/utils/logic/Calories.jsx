@@ -8,28 +8,35 @@ const Calories = (gender, umur, tinggi, berat, aktivitas, target) => {
     sedang: 1.55,
     aktif: 1.9,
   };
+
   const goalCombination = {
     beratBadan: {
-      karbohidrat: 0,
-      protein: 0,
-      lemak: 0,
+      karbohidrat: 20,
+      protein: 40,
+      lemak: 40,
     },
     masaOtot: {
-      karbohidrat: 0,
-      protein: 0,
-      lemak: 0,
+      karbohidrat: 45,
+      protein: 40,
+      lemak: 15,
     },
     tinggi: {
-      karbohidrat: 0,
-      protein: 0,
-      lemak: 0,
+      karbohidrat: 50,
+      protein: 30,
+      lemak: 20,
     },
   };
+
   const BMR = BasalMetabolicRate(gender, umur, tinggi, berat);
   const totalCalorie = BMR * TDEE[aktivitas];
   const konsumsi = goalCombination[target];
+  const Makro = {
+    karbohidrat: (totalCalorie * (konsumsi.karbohidrat / 100)) / 4,
+    protein: (totalCalorie * (konsumsi.protein / 100)) / 4,
+    lemak: (totalCalorie * (konsumsi.lemak / 100)) / 9,
+  };
 
-  return { totalCalorie, konsumsi };
+  return { totalCalorie, Makro };
 };
 
 export default Calories;

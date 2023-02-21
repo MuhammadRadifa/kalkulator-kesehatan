@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { HomepagePages} from './pages';
+import { HomepagePages } from './pages';
 
 function App() {
   return (

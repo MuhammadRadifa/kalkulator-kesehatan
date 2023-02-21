@@ -15,7 +15,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.8.1",
-    "react-type-animation": "^2.1.2"
+    "react-type-animation": "^2.1.2",
+    "sweetalert2": "^11.7.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
