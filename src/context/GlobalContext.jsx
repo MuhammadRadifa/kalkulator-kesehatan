@@ -4,20 +4,36 @@ import axios from 'axios';
 const GlobalContext = createContext();
 
 const GlobalProvider = ({ children }) => {
-  const [data, setData] = useState(0);
+  const [inputUserCalori, setInputUserCalori] = useState({
+    umur: 18,
+    tinggi: 160,
+    berat: 50,
+    gender: '',
+    aktivitas: '',
+    target: '',
+  });
 
   const fetchDataFoods = async (food) => {
-    const dataAPI = await axios.get(`${import.meta.env.VITE_API}ingr=${food}&nutrition-type=logging`);
+    const dataAPI = await axios.get(`${import.meta.env.VITE_API_NUTRISI}ingr=${food}&nutrition-type=logging`);
     return dataAPI.data;
+  };
+
+  const onChangeHandler = (event) => {
+    setInputUserCalori({
+      ...inputUserCalori,
+      [event.target.name]: event.target.type == 'range' ? parseInt(event.target.value) : event.target.value,
+    });
+    console.log(inputUserCalori);
   };
 
   const handler = {
     fetchDataFoods,
+    onChangeHandler,
   };
 
   const state = {
-    data,
-    setData,
+    inputUserCalori,
+    setInputUserCalori,
   };
 
   return <GlobalContext.Provider value={{ state, handler }}>{children}</GlobalContext.Provider>;

@@ -4,7 +4,7 @@ import { AiOutlineGithub, AiOutlineInstagram } from 'react-icons/ai';
 
 const Footer = () => {
   return (
-    <footer className='bg-main font-Poppins text-white'>
+    <footer className='relative z-10 bg-main font-Poppins text-white'>
       <div className='container mx-auto px-4 py-20 sm:px-0 sm:py-40'>
         <div className='grid w-full justify-between sm:grid-cols-3'>
           <div className='mb-7'>

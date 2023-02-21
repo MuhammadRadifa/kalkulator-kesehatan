@@ -1,10 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
-import { HomepagePages } from './pages';
+import { AplikasiKalori, HomepagePages } from './pages';
 
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<HomepagePages />} />
+      <Route path='/home' element={<HomepagePages />} />
+      <Route path='/kalkulator-kalori' element={<AplikasiKalori />} />
+      <Route path='*' element={<HomepagePages />} />
     </Routes>
   );
 }
