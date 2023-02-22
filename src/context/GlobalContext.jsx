@@ -1,5 +1,4 @@
 import React, { createContext, useState } from 'react';
-import axios from 'axios';
 
 const GlobalContext = createContext();
 
@@ -13,21 +12,14 @@ const GlobalProvider = ({ children }) => {
     target: '',
   });
 
-  const fetchDataFoods = async (food) => {
-    const dataAPI = await axios.get(`${import.meta.env.VITE_API_NUTRISI}ingr=${food}&nutrition-type=logging`);
-    return dataAPI.data;
-  };
-
   const onChangeHandler = (event) => {
     setInputUserCalori({
       ...inputUserCalori,
       [event.target.name]: event.target.type == 'range' ? parseInt(event.target.value) : event.target.value,
     });
-    console.log(inputUserCalori);
   };
 
   const handler = {
-    fetchDataFoods,
     onChangeHandler,
   };
 

@@ -43,7 +43,7 @@ const Target = () => {
               className='inline-flex w-full cursor-pointer items-center justify-between rounded bg-secondary p-2 font-medium text-gray-300 shadow-sm peer-checked:bg-darkBlue peer-checked:text-white'
             >
               <div className='w-full text-center'>
-                <h2>Meningkatkan masa otot </h2>
+                <h2>Meningkatkan massa otot </h2>
               </div>
             </label>
           </li>

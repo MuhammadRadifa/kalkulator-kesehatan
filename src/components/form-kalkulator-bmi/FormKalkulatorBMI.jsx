@@ -1,0 +1,65 @@
+import React, { useContext, useState } from 'react';
+import Swal from 'sweetalert2';
+import { GlobalContext } from '../../context/GlobalContext';
+import { FormLayout } from '../../layout';
+import BMI from '../../utils/logic/BMI';
+import FormTitle from '../form-title/FormTitle';
+import Gender from '../gender/Gender';
+import ParameterTubuh from '../parameter-tubuh/ParameterTubuh';
+import ResultKalkulatorBMI from '../result-kalkulator-bmi/ResultKalkulatorBMI';
+
+const FormKalkulatorBMI = () => {
+  const { state } = useContext(GlobalContext);
+  const { inputUserCalori } = state;
+  const [data, setData] = useState({});
+  const [status, setStatus] = useState(false);
+  const { berat, tinggi } = inputUserCalori;
+
+  const handleInput = (e) => {
+    e.preventDefault();
+    setData(BMI(berat, tinggi));
+    let timerInterval;
+    Swal.fire({
+      title: 'loading',
+      html: 'Harap Tunggu Sebentar',
+      timer: 2000,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading();
+      },
+      willClose: () => {
+        clearInterval(timerInterval);
+      },
+    }).then((result) => {
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+        setStatus(true);
+        window.location.href = '#ini';
+      }
+    });
+  };
+  return (
+    <div>
+      <FormLayout>
+        {status && data ? <ResultKalkulatorBMI status={status} data={data} /> : <FormTitle status={status} />}
+        <div className={`${status && ' md:-translate-x-full '} md:px-32`}>
+          <form onSubmit={handleInput}>
+            <div className='w-full rounded-lg bg-main p-10 text-white'>
+              <h2 className='mb-6 text-2xl font-semibold'>Parameter Tubuh</h2>
+              <Gender />
+              <ParameterTubuh />
+              <button
+                type='submit'
+                className='w-full rounded bg-white py-3 text-center text-xl text-main hover:bg-darkBlue hover:text-white'
+              >
+                Kirim
+              </button>
+            </div>
+          </form>
+        </div>
+      </FormLayout>
+    </div>
+  );
+};
+
+export default FormKalkulatorBMI;
