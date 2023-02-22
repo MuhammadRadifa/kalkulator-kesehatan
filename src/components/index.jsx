@@ -6,12 +6,15 @@ import Button from './button/Button';
 import Kontak from './kontak/Kontak';
 import Footer from './footer/Footer';
 import Sidebar from './sidebar/Sidebar';
-import Form from './form/Form';
 import Gender from './gender/Gender';
 import ParameterTubuh from './parameter-tubuh/ParameterTubuh';
 import IntensitasAktivitas from './intensitas-aktivitas/IntensitasAktivitas';
 import Target from './target/Target';
-import Result from './result/Result';
+import FormTitle from './form-title/FormTitle';
+import FormKalkulatorKalori from './form-kalkulator-kalori/FormKalkulatorKalori';
+import FormKalkulatorBMI from './form-kalkulator-bmi/FormKalkulatorBMI';
+import ResultKalkulatorKalori from './result-kalkulator-kalori/ResultKalkulatorKalori';
+import ResultKalkulatorBMI from './result-kalkulator-bmi/ResultKalkulatorBMI';
 
 export {
   Navbar,
@@ -22,10 +25,13 @@ export {
   Kontak,
   Footer,
   Sidebar,
-  Form,
   Gender,
   ParameterTubuh,
   IntensitasAktivitas,
   Target,
-  Result,
+  FormKalkulatorKalori,
+  ResultKalkulatorKalori,
+  FormTitle,
+  FormKalkulatorBMI,
+  ResultKalkulatorBMI,
 };
