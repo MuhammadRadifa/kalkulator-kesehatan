@@ -23,7 +23,6 @@ const GlobalProvider = ({ children }) => {
       ...inputUserCalori,
       [event.target.name]: event.target.type == 'range' ? parseInt(event.target.value) : event.target.value,
     });
-    console.log(inputUserCalori);
   };
 
   const handler = {
