@@ -13,11 +13,11 @@ const FormKalkulatorBMI = () => {
   const { inputUserCalori } = state;
   const [data, setData] = useState({});
   const [status, setStatus] = useState(false);
-  const { berat, tinggi } = inputUserCalori;
+  const { berat, tinggi, gender } = inputUserCalori;
 
   const handleInput = (e) => {
     e.preventDefault();
-    setData(BMI(berat, tinggi));
+    setData(BMI(berat, tinggi, gender));
     let timerInterval;
     Swal.fire({
       title: 'loading',
@@ -46,7 +46,7 @@ const FormKalkulatorBMI = () => {
           <form onSubmit={handleInput}>
             <div className='w-full rounded-lg bg-main p-10 text-white'>
               <h2 className='mb-6 text-2xl font-semibold'>Parameter Tubuh</h2>
-              <Gender />
+              <Gender content={'bmi'} />
               <ParameterTubuh />
               <button
                 type='submit'
