@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
+import { MonoMan, MonoWoman } from '../../assets';
 import { GlobalContext } from '../../context/GlobalContext';
 
-const Gender = () => {
+const Gender = ({ content }) => {
   const { state, handler } = useContext(GlobalContext);
   const { onChangeHandler } = handler;
 
@@ -9,7 +10,7 @@ const Gender = () => {
     <div>
       <div className='mb-5'>
         <ul className='grid w-full gap-4 md:grid-cols-2'>
-          <li>
+          <li className='flex flex-col items-center justify-center'>
             <input
               type='radio'
               onChange={onChangeHandler}
@@ -21,8 +22,9 @@ const Gender = () => {
             />
             <label
               htmlFor='pria'
-              className='inline-flex w-full cursor-pointer items-center justify-between rounded bg-secondary p-5 font-medium text-gray-300 shadow-sm peer-checked:bg-darkBlue peer-checked:text-white'
+              className='flex h-full w-full cursor-pointer flex-col items-center justify-between rounded bg-secondary p-5 font-medium text-gray-300 shadow-sm peer-checked:bg-darkBlue peer-checked:text-white'
             >
+              {content == 'bmi' && <img src={MonoMan} className='w-24' alt='Laki' />}
               <h2 className='mx-auto'>Laki-Laki</h2>
             </label>
           </li>
@@ -37,8 +39,9 @@ const Gender = () => {
             />
             <label
               htmlFor='wanita'
-              className='inline-flex w-full cursor-pointer items-center justify-between rounded bg-secondary p-5 font-medium text-gray-300 shadow-sm peer-checked:bg-darkBlue peer-checked:text-white'
+              className='flex h-full w-full cursor-pointer flex-col items-center justify-between rounded bg-secondary p-5 font-medium text-gray-300 shadow-sm peer-checked:bg-darkBlue peer-checked:text-white'
             >
+              {content == 'bmi' && <img src={MonoWoman} className='w-24' alt='Perempuan' />}
               <h2 className='mx-auto'>Perempuan</h2>
             </label>
           </li>
