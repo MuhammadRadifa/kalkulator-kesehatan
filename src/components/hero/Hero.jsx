@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { TypeAnimation } from 'react-type-animation';
 import { HeroImg } from '../../assets';
 import Button from '../button/Button';
@@ -22,7 +23,9 @@ const Hero = () => {
               Biarkan kami membuat kalkulator kesehatan untuk membantu solusi Anda untuk hidup sehat. Pilih resep segar
               dan sehat
             </p>
-            <Button>COBA SEKARANG</Button>
+            <Link to={'/kalkulator-kalori'}>
+              <Button>COBA SEKARANG</Button>
+            </Link>
           </div>
           <div data-aos='fade-right' className='mx-auto'>
             <img src={HeroImg} alt='Hero Image' className='w-full' />

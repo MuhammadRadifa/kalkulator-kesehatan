@@ -10,11 +10,15 @@ import Gender from './gender/Gender';
 import ParameterTubuh from './parameter-tubuh/ParameterTubuh';
 import IntensitasAktivitas from './intensitas-aktivitas/IntensitasAktivitas';
 import Target from './target/Target';
-import FormTitle from './form-title/FormTitle';
+import TitleKalori from './title-kalori/TitleKalori';
+import TitleBMI from './title-bmi/TitleBMI';
+import TitleHidrasi from './title-hidrasi/TitleHidrasi';
 import FormKalkulatorKalori from './form-kalkulator-kalori/FormKalkulatorKalori';
-import FormKalkulatorBMI from './form-kalkulator-bmi/FormKalkulatorBMI';
 import ResultKalkulatorKalori from './result-kalkulator-kalori/ResultKalkulatorKalori';
+import FormKalkulatorBMI from './form-kalkulator-bmi/FormKalkulatorBMI';
 import ResultKalkulatorBMI from './result-kalkulator-bmi/ResultKalkulatorBMI';
+import FormKalkulatorHidrasi from './form-kalkulator-hidrasi/FormKalkulatorHidrasi';
+import ResultKalkulatorHidrasi from './result-kalkulator-hidrasi/ResultKalkulatorHidrasi';
 
 export {
   Navbar,
@@ -31,7 +35,11 @@ export {
   Target,
   FormKalkulatorKalori,
   ResultKalkulatorKalori,
-  FormTitle,
+  TitleKalori,
   FormKalkulatorBMI,
+  TitleBMI,
   ResultKalkulatorBMI,
+  ResultKalkulatorHidrasi,
+  FormKalkulatorHidrasi,
+  TitleHidrasi,
 };

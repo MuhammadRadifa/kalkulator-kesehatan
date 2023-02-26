@@ -3,10 +3,10 @@ import Swal from 'sweetalert2';
 import { GlobalContext } from '../../context/GlobalContext';
 import { FormLayout } from '../../layout';
 import BMI from '../../utils/logic/BMI';
-import FormTitle from '../form-title/FormTitle';
 import Gender from '../gender/Gender';
 import ParameterTubuh from '../parameter-tubuh/ParameterTubuh';
 import ResultKalkulatorBMI from '../result-kalkulator-bmi/ResultKalkulatorBMI';
+import TitleBMI from '../title-bmi/TitleBMI';
 
 const FormKalkulatorBMI = () => {
   const { state } = useContext(GlobalContext);
@@ -41,7 +41,7 @@ const FormKalkulatorBMI = () => {
   return (
     <div>
       <FormLayout>
-        {status && data ? <ResultKalkulatorBMI status={status} data={data} /> : <FormTitle status={status} />}
+        {status && data ? <ResultKalkulatorBMI status={status} data={data} /> : <TitleBMI status={status} />}
         <div className={`${status && ' md:-translate-x-full '} md:px-32`}>
           <form onSubmit={handleInput}>
             <div className='w-full rounded-lg bg-main p-10 text-white'>

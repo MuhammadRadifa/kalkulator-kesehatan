@@ -1,12 +1,12 @@
 import React from 'react';
-import { medical } from '../../assets';
+import { Medical } from '../../assets';
 
-const notfound = () => {
+const NotFound = () => {
   return (
     <div>
-      <img src={medical} alt='' />
+      <img src={Medical} alt='Not Found' />
     </div>
   );
 };
 
-export default notfound;
+export default NotFound;
