@@ -6,9 +6,9 @@ import Target from '../target/Target';
 import { GlobalContext } from '../../context/GlobalContext';
 import Calories from '../../utils/logic/Calories';
 import Swal from 'sweetalert2';
-import ResultKalkulatorKalori from '../result-kalkulator-kalori/ResultKalkulatorKalori';
+import ResultKalkulatorKalori from '../result/ResultKalkulatorKalori';
 import { FormLayout } from '../../layout';
-import TitleKalori from '../title-kalori/TitleKalori';
+import TitleKalori from '../title/TitleKalori';
 
 const FormKalkulatorKalori = () => {
   const { state } = useContext(GlobalContext);

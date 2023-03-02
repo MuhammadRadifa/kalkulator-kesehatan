@@ -5,8 +5,8 @@ import { FormLayout } from '../../layout';
 import BMI from '../../utils/logic/BMI';
 import Gender from '../gender/Gender';
 import ParameterTubuh from '../parameter-tubuh/ParameterTubuh';
-import ResultKalkulatorBMI from '../result-kalkulator-bmi/ResultKalkulatorBMI';
-import TitleBMI from '../title-bmi/TitleBMI';
+import ResultKalkulatorBMI from '../result/ResultKalkulatorBMI';
+import TitleBMI from '../title/TitleBMI';
 
 const FormKalkulatorBMI = () => {
   const { state } = useContext(GlobalContext);

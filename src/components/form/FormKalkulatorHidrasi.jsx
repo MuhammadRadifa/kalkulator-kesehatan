@@ -5,8 +5,8 @@ import { GlobalContext } from '../../context/GlobalContext';
 import Swal from 'sweetalert2';
 import { FormLayout } from '../../layout';
 import { KebutuhanAir } from '../../utils';
-import ResultKalkulatorHidrasi from '../result-kalkulator-hidrasi/ResultKalkulatorHidrasi';
-import TitleHidrasi from '../title-hidrasi/TitleHidrasi';
+import ResultKalkulatorHidrasi from '../result/ResultKalkulatorHidrasi';
+import TitleHidrasi from '../title/TitleHidrasi';
 
 const FormKalkulatorHidrasi = () => {
   const { state } = useContext(GlobalContext);

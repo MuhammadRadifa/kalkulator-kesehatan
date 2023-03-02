@@ -10,15 +10,15 @@ import Gender from './gender/Gender';
 import ParameterTubuh from './parameter-tubuh/ParameterTubuh';
 import IntensitasAktivitas from './intensitas-aktivitas/IntensitasAktivitas';
 import Target from './target/Target';
-import TitleKalori from './title-kalori/TitleKalori';
-import TitleBMI from './title-bmi/TitleBMI';
-import TitleHidrasi from './title-hidrasi/TitleHidrasi';
-import FormKalkulatorKalori from './form-kalkulator-kalori/FormKalkulatorKalori';
-import ResultKalkulatorKalori from './result-kalkulator-kalori/ResultKalkulatorKalori';
-import FormKalkulatorBMI from './form-kalkulator-bmi/FormKalkulatorBMI';
-import ResultKalkulatorBMI from './result-kalkulator-bmi/ResultKalkulatorBMI';
-import FormKalkulatorHidrasi from './form-kalkulator-hidrasi/FormKalkulatorHidrasi';
-import ResultKalkulatorHidrasi from './result-kalkulator-hidrasi/ResultKalkulatorHidrasi';
+import TitleKalori from './title/TitleKalori';
+import TitleBMI from './title/TitleBMI';
+import TitleHidrasi from './title/TitleHidrasi';
+import FormKalkulatorKalori from './form/FormKalkulatorKalori';
+import ResultKalkulatorKalori from './result/ResultKalkulatorKalori';
+import FormKalkulatorBMI from './form/FormKalkulatorBMI';
+import ResultKalkulatorBMI from './result/ResultKalkulatorBMI';
+import FormKalkulatorHidrasi from './form/FormKalkulatorHidrasi';
+import ResultKalkulatorHidrasi from './result/ResultKalkulatorHidrasi';
 
 export {
   Navbar,
