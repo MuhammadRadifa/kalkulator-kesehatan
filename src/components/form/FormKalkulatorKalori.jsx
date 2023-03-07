@@ -6,9 +6,9 @@ import Target from '../target/Target';
 import { GlobalContext } from '../../context/GlobalContext';
 import Calories from '../../utils/logic/Calories';
 import Swal from 'sweetalert2';
-import FormTitle from '../form-title/FormTitle';
-import ResultKalkulatorKalori from '../result-kalkulator-kalori/ResultKalkulatorKalori';
+import ResultKalkulatorKalori from '../result/ResultKalkulatorKalori';
 import { FormLayout } from '../../layout';
+import TitleKalori from '../title/TitleKalori';
 
 const FormKalkulatorKalori = () => {
   const { state } = useContext(GlobalContext);
@@ -42,7 +42,7 @@ const FormKalkulatorKalori = () => {
 
   return (
     <FormLayout>
-      {status && data ? <ResultKalkulatorKalori status={status} data={data} /> : <FormTitle status={status} />}
+      {status && data ? <ResultKalkulatorKalori status={status} data={data} /> : <TitleKalori status={status} />}
       <div className={`${status && ' md:-translate-x-full '} md:px-32`}>
         <form onSubmit={handleInput}>
           <div className='w-full rounded-lg bg-main p-10 text-white'>

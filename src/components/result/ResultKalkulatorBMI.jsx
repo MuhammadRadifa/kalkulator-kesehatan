@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ColorMan, ColorWoman } from '../../assets';
 import { Result } from '../../layout';
 import Button from '../button/Button';
@@ -23,9 +24,11 @@ const ResultKalkulatorBMI = ({ status, data }) => {
       <img src={hasil.imageParameter} alt='Parameter' />
       <div className='my-4 text-left'>
         <p>BMI Kamu : {total}</p>
-        <p>{hasil.pesan}</p>
+        {hasil.pesan}
         <p className='my-4'>Gunakan kalkulator kalori untuk mengetahui kebutuhan kalori anda setiap harinya.</p>
-        <Button>Kalkulator Kalori</Button>
+        <Link to={'/kalkulator-kalori'}>
+          <Button>Kalkulator Kalori</Button>
+        </Link>
       </div>
     </Result>
   );

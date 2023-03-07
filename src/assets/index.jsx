@@ -1,7 +1,7 @@
-import HeroImg from './images/hero.svg';
 import Kalkulator from './icons/kalkulator.svg';
 import BMI from './icons/bmi.svg';
 import Burger from './icons/burger.svg';
+import Hidration from './icons/hidration.svg';
 import Medical from './icons/medical.svg';
 import Karbo from './icons/karbo.svg';
 import Lemak from './icons/lemak.svg';
@@ -16,12 +16,16 @@ import MonoMan from './icons/mono-man.svg';
 import MonoWoman from './icons/mono-woman.svg';
 import ColorMan from './icons/color-man.svg';
 import ColorWoman from './icons/color-woman.svg';
+import Gelas from './icons/glass.svg';
+import Water from './icons/water.png';
+import HeroImg from './images/hero.svg';
 
 export {
   HeroImg,
   Kalkulator,
   BMI,
   Burger,
+  Hidration,
   Karbo,
   Lemak,
   Protein,
@@ -36,4 +40,6 @@ export {
   ColorMan,
   ColorWoman,
   Medical,
+  Gelas,
+  Water,
 };
