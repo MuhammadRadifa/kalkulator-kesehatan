@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { AplikasiBMI, AplikasiKalori, AplkasiHidrasi, HomepagePages, NotFound } from './pages';
+import { AplikasiBMI, AplikasiKalori, AplikasiKebahagiaan, AplkasiHidrasi, HomepagePages, NotFound } from './pages';
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
       <Route path='/kalkulator-kalori' element={<AplikasiKalori />} />
       <Route path='/kalkulator-bmi' element={<AplikasiBMI />} />
       <Route path='/kalkulator-hidrasi' element={<AplkasiHidrasi />} />
+      <Route path='/kalkulator-kebahagiaan' element={<AplikasiKebahagiaan />} />
       <Route path='*' element={<HomepagePages />} />
     </Routes>
   );
