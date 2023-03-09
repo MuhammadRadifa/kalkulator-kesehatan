@@ -19,6 +19,12 @@ import ColorWoman from './icons/color-woman.svg';
 import Gelas from './icons/glass.svg';
 import Water from './icons/water.png';
 import HeroImg from './images/hero.svg';
+import EmojiOK from './icons/emoji-ok.svg';
+import EmojiNormal from './icons/emoji-normal.svg';
+import EmojiPuas from './icons/emoji-puas.svg';
+import EmojiSangatPuas from './icons/emoji-sangat-puas.svg';
+import EmojiTidakPuas from './icons/emoji-tidak-puas.svg';
+import EmojiSangatTidakPuas from './icons/emoji-sangat-tidak-puas.svg';
 
 export {
   HeroImg,
@@ -42,4 +48,10 @@ export {
   Medical,
   Gelas,
   Water,
+  EmojiOK,
+  EmojiNormal,
+  EmojiSangatPuas,
+  EmojiPuas,
+  EmojiTidakPuas,
+  EmojiSangatTidakPuas,
 };

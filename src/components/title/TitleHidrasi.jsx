@@ -1,5 +1,5 @@
 import React from 'react';
-import { BMI, Hidration } from '../../assets';
+import { Hidration } from '../../assets';
 import { FormTitle } from '../../layout';
 
 const TitleHidrasi = ({ status }) => {

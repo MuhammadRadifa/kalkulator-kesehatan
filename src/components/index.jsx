@@ -19,6 +19,9 @@ import FormKalkulatorBMI from './form/FormKalkulatorBMI';
 import ResultKalkulatorBMI from './result/ResultKalkulatorBMI';
 import FormKalkulatorHidrasi from './form/FormKalkulatorHidrasi';
 import ResultKalkulatorHidrasi from './result/ResultKalkulatorHidrasi';
+import FormKalkulatorKebahagiaan from './form/FormKalkulatorKebahagiaan';
+import TitleKebahagiaan from './title/TitleKebahagiaan';
+import ResultKalkulatorKebahagiaan from './result/ResultKalkulatorKebahagiaan';
 
 export {
   Navbar,
@@ -42,4 +45,7 @@ export {
   ResultKalkulatorHidrasi,
   FormKalkulatorHidrasi,
   TitleHidrasi,
+  FormKalkulatorKebahagiaan,
+  TitleKebahagiaan,
+  ResultKalkulatorKebahagiaan,
 };
