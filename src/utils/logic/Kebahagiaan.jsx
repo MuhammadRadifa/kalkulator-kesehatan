@@ -1,6 +1,6 @@
 import { EmojiNormal, EmojiPuas, EmojiSangatPuas, EmojiSangatTidakPuas, EmojiTidakPuas } from '../../assets';
 
-const Kebahagiaan = (state1, state2, state3, state4, state5) => {
+const Kebahagiaan = ({ state1, state2, state3, state4, state5 }) => {
   const skor = state1 + state2 + state3 + state4 + state5;
   let hasil = {};
 

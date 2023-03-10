@@ -1,18 +1,27 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import { FormLayout } from '../../layout';
-import Kebahagiaan from '../../utils/logic/Kebahagiaan';
+import { Kebahagiaan } from '../../utils';
 import ResultKalkulatorKebahagiaan from '../result/ResultKalkulatorKebahagiaan';
 import TitleKebahagiaan from '../title/TitleKebahagiaan';
 
 const FormKalkulatorKebahagiaan = () => {
   const [status, setStatus] = useState(false);
   const [data, setData] = useState({});
-  const [state1, setState1] = useState(1);
-  const [state2, setState2] = useState(1);
-  const [state3, setState3] = useState(1);
-  const [state4, setState4] = useState(1);
-  const [state5, setState5] = useState(1);
+  const [dataSkor, setDataSkor] = useState({
+    state1: 1,
+    state2: 1,
+    state3: 1,
+    state4: 1,
+    state5: 1,
+  });
+  const text = [
+    'Dalam sebagian besar aspek, hidup saya mendekati cita-cita saya',
+    'Secara umum kondisi kehidupan saya sangat baik',
+    'Saya merasa hidup saya memuaskan',
+    'Sejauh ini saya telah mendapatkan hal-hal penting yang saya inginkan dalam hidup saya',
+    'Jika saya dapat menjalani hidup saya lagi, saya tidak akan mengubah apa pun',
+  ];
   const optSelect = [];
 
   for (let i = 0; i < 7; i++) {
@@ -23,29 +32,13 @@ const FormKalkulatorKebahagiaan = () => {
     );
   }
 
-  const handleState1 = (e) => {
-    setState1(parseInt(e.target.value));
-  };
-
-  const handleState2 = (e) => {
-    setState2(parseInt(e.target.value));
-  };
-
-  const handleState3 = (e) => {
-    setState3(parseInt(e.target.value));
-  };
-
-  const handleState4 = (e) => {
-    setState4(parseInt(e.target.value));
-  };
-
-  const handleState5 = (e) => {
-    setState5(parseInt(e.target.value));
+  const handleState = (e) => {
+    setDataSkor({ ...dataSkor, [e.target.name]: parseInt(e.target.value) });
   };
 
   const handleInput = (e) => {
     e.preventDefault();
-    setData(Kebahagiaan(state1, state2, state3, state4, state5));
+    setData(Kebahagiaan(dataSkor));
     let timerInterval;
     Swal.fire({
       html: 'Harap Tunggu Sebentar',
@@ -82,63 +75,22 @@ const FormKalkulatorKebahagiaan = () => {
             </div>
             <div>
               <ol className='mb-5 grid list-outside list-decimal gap-y-5'>
-                <li className='flex items-center justify-between'>
-                  <p className='w-2/3'>Dalam sebagian besar aspek, hidup saya mendekati cita-cita saya</p>
-                  <select
-                    name='state1'
-                    id='state1'
-                    className='h-12 w-24 rounded-lg bg-white text-center text-gray-400 outline-sky-500'
-                    onChange={handleState1}
-                  >
-                    {optSelect}
-                  </select>
-                </li>
-                <li className='flex items-center justify-between'>
-                  <p className='w-2/3'>Secara umum kondisi kehidupan saya sangat baik</p>
-                  <select
-                    name='state2'
-                    id='state2'
-                    className='h-12 w-24 rounded-lg bg-white text-center text-gray-400 outline-sky-500'
-                    onChange={handleState2}
-                  >
-                    {optSelect}
-                  </select>
-                </li>
-                <li className='flex items-center justify-between'>
-                  <p className='w-2/3'>Saya merasa hidup saya memuaskan</p>
-                  <select
-                    name='state3'
-                    id='state3'
-                    className='h-12 w-24 rounded-lg bg-white text-center text-gray-400 outline-sky-500'
-                    onChange={handleState3}
-                  >
-                    {optSelect}
-                  </select>
-                </li>
-                <li className='flex items-center justify-between'>
-                  <p className='w-2/3'>
-                    Sejauh ini saya telah mendapatkan hal-hal penting yang saya inginkan dalam hidup saya
-                  </p>
-                  <select
-                    name='state4'
-                    id='state4'
-                    className='h-12 w-24 rounded-lg bg-white text-center text-gray-400 outline-sky-500'
-                    onChange={handleState4}
-                  >
-                    {optSelect}
-                  </select>
-                </li>
-                <li className='flex items-center justify-between'>
-                  <p className='w-2/3'>Jika saya dapat menjalani hidup saya lagi, saya tidak akan mengubah apa pun</p>
-                  <select
-                    name='state5'
-                    id='state5'
-                    className='h-12 w-24 rounded-lg bg-white text-center text-gray-400 outline-sky-500'
-                    onChange={handleState5}
-                  >
-                    {optSelect}
-                  </select>
-                </li>
+                {text &&
+                  text.map((element, index) => {
+                    return (
+                      <li className='flex items-center justify-between' key={index}>
+                        <p className='w-2/3'>{element}</p>
+                        <select
+                          name={`state${index + 1}`}
+                          id={`state${index + 1}`}
+                          className='h-12 w-24 rounded-lg bg-white text-center text-gray-400 outline-sky-500'
+                          onChange={handleState}
+                        >
+                          {optSelect}
+                        </select>
+                      </li>
+                    );
+                  })}
               </ol>
             </div>
             <button
