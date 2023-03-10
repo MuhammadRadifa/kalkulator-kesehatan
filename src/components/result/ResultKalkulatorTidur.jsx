@@ -1,0 +1,40 @@
+import React from 'react';
+import { Result } from '../../layout';
+
+const ResultKalkulatorTidur = ({ status, data, jamTidur }) => {
+  const { jam, menit } = jamTidur;
+  return (
+    <Result status={status}>
+      <div className='text-left'>
+        <h1 className='mb-9 text-center text-6xl font-semibold text-gray-700'>Hasil Kalkulasi</h1>
+        <p className='mb-11 text-xl'>
+          Untuk bangun di jam{' '}
+          <span className='font-medium'>
+            {jam < 10 ? `0${jam}` : jam}:{menit < 10 ? `0${menit}` : menit}
+          </span>
+          , kamu sebaiknya pergi tidur pada jam:
+        </p>
+        <div>
+          {data.map((d, index) => {
+            console.info(d.jamWaktu);
+            return (
+              <div key={index} className='relative mb-4 rounded-lg bg-slate-200 p-6'>
+                {index === 0 && (
+                  <p className='absolute top-4 right-4 text-lg font-semibold text-yellow-500'>
+                    Disarankan<span className='text-pink-500'>*</span>
+                  </p>
+                )}
+                <p className='text-2xl font-semibold text-main'>{d.jamWaktu}</p>
+                <p className='text-slate-500'>
+                  {d.durasi} jam tidur, {d.siklus} siklus tidur
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </Result>
+  );
+};
+
+export default ResultKalkulatorTidur;

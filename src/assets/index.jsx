@@ -25,6 +25,8 @@ import EmojiPuas from './icons/emoji-puas.svg';
 import EmojiSangatPuas from './icons/emoji-sangat-puas.svg';
 import EmojiTidakPuas from './icons/emoji-tidak-puas.svg';
 import EmojiSangatTidakPuas from './icons/emoji-sangat-tidak-puas.svg';
+import BedSleep from './icons/bed-sleep.svg';
+import WakeUp from './icons/wake-up.svg';
 
 export {
   HeroImg,
@@ -54,4 +56,6 @@ export {
   EmojiPuas,
   EmojiTidakPuas,
   EmojiSangatTidakPuas,
+  BedSleep,
+  WakeUp,
 };
