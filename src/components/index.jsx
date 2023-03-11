@@ -22,6 +22,9 @@ import ResultKalkulatorHidrasi from './result/ResultKalkulatorHidrasi';
 import FormKalkulatorKebahagiaan from './form/FormKalkulatorKebahagiaan';
 import TitleKebahagiaan from './title/TitleKebahagiaan';
 import ResultKalkulatorKebahagiaan from './result/ResultKalkulatorKebahagiaan';
+import FormKalkulatorTidur from './form/FormKalkulatorTidur';
+import TitleTidur from './title/TitleTidur';
+import ResultKalkulatorTidur from './result/ResultKalkulatorTidur';
 
 export {
   Navbar,
@@ -48,4 +51,7 @@ export {
   FormKalkulatorKebahagiaan,
   TitleKebahagiaan,
   ResultKalkulatorKebahagiaan,
+  FormKalkulatorTidur,
+  TitleTidur,
+  ResultKalkulatorTidur,
 };

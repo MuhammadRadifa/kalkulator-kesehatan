@@ -1,9 +1,9 @@
-const Tidur = (jam, menit) => {
+const Tidur = ({ jam, menit }) => {
   const data = {
-    waktu1: { jamWaktu: '00:00', siklus: 6 },
-    waktu2: { jamWaktu: '00:00', siklus: 5 },
-    waktu3: { jamWaktu: '00:00', siklus: 4 },
-    waktu4: { jamWaktu: '00:00', siklus: 3 },
+    waktu1: { jamWaktu: '00:00', durasi: 9, siklus: 6 },
+    waktu2: { jamWaktu: '00:00', durasi: 7.5, siklus: 5 },
+    waktu3: { jamWaktu: '00:00', durasi: 6, siklus: 4 },
+    waktu4: { jamWaktu: '00:00', durasi: 4.5, siklus: 3 },
   };
 
   let waktu = jam - 9;
@@ -25,7 +25,7 @@ const kurangWaktu = (waktu, menit) => {
   let jam = parseInt(waktu.split(':')[0]);
   let result = '00:00';
   jam = jam + 1;
-  if (jam > 24) {
+  if (jam > 23) {
     jam = jam - 24;
   }
 

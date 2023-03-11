@@ -5,5 +5,15 @@ import TestPages from './homepage/test';
 import NotFound from './notfound/notfound';
 import AplkasiHidrasi from './aplikasi-kalkulator-hidrasi/AplikasiKalkulatorHidrasi';
 import AplikasiKebahagiaan from './aplikasi-kalkulator-kebahagiaan/AplikasiKebahagiaan';
+import AplikasiTidur from './aplikasi-kalkulator-siklus-tidur/AplikasiTidur';
 
-export { HomepagePages, TestPages, AplikasiKalori, AplikasiBMI, NotFound, AplkasiHidrasi, AplikasiKebahagiaan };
+export {
+  HomepagePages,
+  TestPages,
+  AplikasiKalori,
+  AplikasiBMI,
+  NotFound,
+  AplkasiHidrasi,
+  AplikasiKebahagiaan,
+  AplikasiTidur,
+};
