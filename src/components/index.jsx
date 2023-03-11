@@ -25,6 +25,7 @@ import ResultKalkulatorKebahagiaan from './result/ResultKalkulatorKebahagiaan';
 import FormKalkulatorTidur from './form/FormKalkulatorTidur';
 import TitleTidur from './title/TitleTidur';
 import ResultKalkulatorTidur from './result/ResultKalkulatorTidur';
+import FormKalkulatorRokok from './form/FormKalkulatorRokok';
 
 export {
   Navbar,
@@ -54,4 +55,5 @@ export {
   FormKalkulatorTidur,
   TitleTidur,
   ResultKalkulatorTidur,
+  FormKalkulatorRokok,
 };

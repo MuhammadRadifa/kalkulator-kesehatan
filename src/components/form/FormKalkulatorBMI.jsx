@@ -17,7 +17,6 @@ const FormKalkulatorBMI = () => {
 
   const handleInput = (e) => {
     e.preventDefault();
-    setData(BMI(berat, tinggi, gender));
     let timerInterval;
     Swal.fire({
       title: 'loading',
@@ -32,6 +31,7 @@ const FormKalkulatorBMI = () => {
       },
     }).then((result) => {
       /* Read more about handling dismissals below */
+      setData(BMI(berat, tinggi, gender));
       if (result.dismiss === Swal.DismissReason.timer) {
         setStatus(true);
         window.location.href = '#ini';

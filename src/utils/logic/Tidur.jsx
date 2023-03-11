@@ -11,7 +11,7 @@ const Tidur = ({ jam, menit }) => {
   if (waktu < 0) {
     waktu = 24 + waktu;
   }
-  data.waktu1.jamWaktu = waktu < 10 ? `0${waktu}:${menit}` : `${waktu}:${menit}`;
+  data.waktu1.jamWaktu = format(waktu, menit);
   data.waktu2.jamWaktu = kurangWaktu(data.waktu1.jamWaktu, menit);
   data.waktu3.jamWaktu = kurangWaktu(data.waktu2.jamWaktu, data.waktu2.jamWaktu.split(':')[1]);
   data.waktu4.jamWaktu = kurangWaktu(data.waktu3.jamWaktu, data.waktu3.jamWaktu.split(':')[1]);
@@ -23,7 +23,7 @@ const Tidur = ({ jam, menit }) => {
 
 const kurangWaktu = (waktu, menit) => {
   let jam = parseInt(waktu.split(':')[0]);
-  let result = '00:00';
+
   jam = jam + 1;
   if (jam > 23) {
     jam = jam - 24;
@@ -43,6 +43,13 @@ const kurangWaktu = (waktu, menit) => {
     jam = 0;
   }
 
+  return format(jam, menit);
+};
+
+const format = (jam, menit) => {
+  let result = '00:00';
+  menit = parseInt(menit);
+  console.log(menit, 'ini format');
   if (jam < 10) {
     result = menit < 10 ? `0${jam}:0${menit}` : `0${jam}:${menit}`;
   } else {

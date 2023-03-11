@@ -38,7 +38,6 @@ const FormKalkulatorKebahagiaan = () => {
 
   const handleInput = (e) => {
     e.preventDefault();
-    setData(Kebahagiaan(dataSkor));
     let timerInterval;
     Swal.fire({
       html: 'Harap Tunggu Sebentar',
@@ -52,6 +51,7 @@ const FormKalkulatorKebahagiaan = () => {
       },
     }).then((result) => {
       /* Read more about handling dismissals below */
+      setData(Kebahagiaan(dataSkor));
       if (result.dismiss === Swal.DismissReason.timer) {
         setStatus(true);
         window.location.href = '#ini';

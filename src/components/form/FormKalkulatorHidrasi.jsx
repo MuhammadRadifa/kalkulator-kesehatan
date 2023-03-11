@@ -17,7 +17,6 @@ const FormKalkulatorHidrasi = () => {
 
   const handleInput = (e) => {
     e.preventDefault();
-    setData(KebutuhanAir(berat));
     let timerInterval;
     Swal.fire({
       html: 'Harap Tunggu Sebentar',
@@ -31,6 +30,7 @@ const FormKalkulatorHidrasi = () => {
       },
     }).then((result) => {
       /* Read more about handling dismissals below */
+      setData(KebutuhanAir(berat));
       if (result.dismiss === Swal.DismissReason.timer) {
         setStatus(true);
         window.location.href = '#ini';

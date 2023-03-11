@@ -40,7 +40,6 @@ const FormKalkulatorTidur = () => {
 
   const handleInput = (e) => {
     e.preventDefault();
-    setData(Tidur(dataTidur));
     let timerInterval;
     Swal.fire({
       html: 'Harap Tunggu Sebentar',
@@ -54,6 +53,7 @@ const FormKalkulatorTidur = () => {
       },
     }).then((result) => {
       /* Read more about handling dismissals below */
+      setData(Tidur(dataTidur));
       if (result.dismiss === Swal.DismissReason.timer) {
         setStatus(true);
         window.location.href = '#ini';
@@ -80,14 +80,17 @@ const FormKalkulatorTidur = () => {
                 {waktu &&
                   waktu.map((w) => {
                     return (
-                      <select
-                        name={w}
-                        id={w}
-                        onChange={handleState}
-                        className='rounded-lg bg-white px-7 py-3 text-lg text-main'
-                      >
-                        {w == 'jam' ? optSelectJam : optSelectMenit}
-                      </select>
+                      <label htmlFor={w}>
+                        <p className='text-center text-xl font-medium capitalize'>{w}</p>
+                        <select
+                          name={w}
+                          id={w}
+                          onChange={handleState}
+                          className='rounded-lg bg-white px-7 py-3 text-lg text-main'
+                        >
+                          {w == 'jam' ? optSelectJam : optSelectMenit}
+                        </select>
+                      </label>
                     );
                   })}
               </div>

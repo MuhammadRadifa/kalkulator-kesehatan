@@ -18,7 +18,6 @@ const FormKalkulatorKalori = () => {
 
   const handleInput = (e) => {
     e.preventDefault();
-    setData(Calories(inputUserCalori));
     let timerInterval;
     Swal.fire({
       title: 'loading',
@@ -33,6 +32,7 @@ const FormKalkulatorKalori = () => {
       },
     }).then((result) => {
       /* Read more about handling dismissals below */
+      setData(Calories(inputUserCalori));
       if (result.dismiss === Swal.DismissReason.timer) {
         setStatus(true);
         window.location.href = '#ini';

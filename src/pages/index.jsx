@@ -6,6 +6,7 @@ import NotFound from './notfound/notfound';
 import AplkasiHidrasi from './aplikasi-kalkulator-hidrasi/AplikasiKalkulatorHidrasi';
 import AplikasiKebahagiaan from './aplikasi-kalkulator-kebahagiaan/AplikasiKebahagiaan';
 import AplikasiTidur from './aplikasi-kalkulator-siklus-tidur/AplikasiTidur';
+import AplikasiRokok from './aplikasi-kalkulator-rokok/AplikasiRokok';
 
 export {
   HomepagePages,
@@ -16,4 +17,5 @@ export {
   AplkasiHidrasi,
   AplikasiKebahagiaan,
   AplikasiTidur,
+  AplikasiRokok,
 };

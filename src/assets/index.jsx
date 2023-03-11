@@ -27,6 +27,11 @@ import EmojiTidakPuas from './icons/emoji-tidak-puas.svg';
 import EmojiSangatTidakPuas from './icons/emoji-sangat-tidak-puas.svg';
 import BedSleep from './icons/bed-sleep.svg';
 import WakeUp from './icons/wake-up.svg';
+import Smoke from './icons/smoke.svg';
+import kalender from './icons/kalender.svg';
+import orangMerokok from './icons/orangMerokok.svg';
+import kotak from './icons/kotak.svg';
+import rupiah from './icons/rupiah.svg';
 
 export {
   HeroImg,
@@ -58,4 +63,9 @@ export {
   EmojiSangatTidakPuas,
   BedSleep,
   WakeUp,
+  Smoke,
+  kalender,
+  orangMerokok,
+  kotak,
+  rupiah,
 };
