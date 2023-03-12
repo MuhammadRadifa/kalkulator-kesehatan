@@ -80,7 +80,7 @@ const FormKalkulatorTidur = () => {
                 {waktu &&
                   waktu.map((w) => {
                     return (
-                      <label htmlFor={w}>
+                      <label htmlFor={w} key={w}>
                         <p className='text-center text-xl font-medium capitalize'>{w}</p>
                         <select
                           name={w}

@@ -49,7 +49,6 @@ const kurangWaktu = (waktu, menit) => {
 const format = (jam, menit) => {
   let result = '00:00';
   menit = parseInt(menit);
-  console.log(menit, 'ini format');
   if (jam < 10) {
     result = menit < 10 ? `0${jam}:0${menit}` : `0${jam}:${menit}`;
   } else {

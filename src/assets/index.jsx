@@ -32,6 +32,13 @@ import kalender from './icons/kalender.svg';
 import orangMerokok from './icons/orangMerokok.svg';
 import kotak from './icons/kotak.svg';
 import rupiah from './icons/rupiah.svg';
+import Kopi from './icons/kopi.svg';
+import Teh from './icons/teh.svg';
+import Soda from './icons/soda.svg';
+import Energi from './icons/energi.svg';
+import TehHijau from './icons/teh-hijau.svg';
+import Expresso from './icons/expresso.svg';
+import Kafein from './icons/kafein.svg';
 
 export {
   HeroImg,
@@ -68,4 +75,11 @@ export {
   orangMerokok,
   kotak,
   rupiah,
+  Kopi,
+  Teh,
+  Soda,
+  Energi,
+  TehHijau,
+  Expresso,
+  Kafein,
 };

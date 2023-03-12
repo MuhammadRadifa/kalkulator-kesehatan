@@ -7,6 +7,7 @@ import AplkasiHidrasi from './aplikasi-kalkulator-hidrasi/AplikasiKalkulatorHidr
 import AplikasiKebahagiaan from './aplikasi-kalkulator-kebahagiaan/AplikasiKebahagiaan';
 import AplikasiTidur from './aplikasi-kalkulator-siklus-tidur/AplikasiTidur';
 import AplikasiRokok from './aplikasi-kalkulator-rokok/AplikasiRokok';
+import AplikasiKafein from './aplikasi-kalkulator-kafein/AplikasiKafein';
 
 export {
   HomepagePages,
@@ -18,4 +19,5 @@ export {
   AplikasiKebahagiaan,
   AplikasiTidur,
   AplikasiRokok,
+  AplikasiKafein,
 };
