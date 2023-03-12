@@ -26,6 +26,8 @@ import FormKalkulatorTidur from './form/FormKalkulatorTidur';
 import TitleTidur from './title/TitleTidur';
 import ResultKalkulatorTidur from './result/ResultKalkulatorTidur';
 import FormKalkulatorRokok from './form/FormKalkulatorRokok';
+import FormKalkulatorKafein from './form/FormKalkulatorKafein';
+import TitleKafein from './title/TitleKafein';
 
 export {
   Navbar,
@@ -56,4 +58,6 @@ export {
   TitleTidur,
   ResultKalkulatorTidur,
   FormKalkulatorRokok,
+  FormKalkulatorKafein,
+  TitleKafein,
 };

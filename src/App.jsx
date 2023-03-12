@@ -8,6 +8,7 @@ import {
   HomepagePages,
   NotFound,
   AplikasiRokok,
+  AplikasiKafein,
 } from './pages';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <Route path='/kalkulator-kebahagiaan' element={<AplikasiKebahagiaan />} />
       <Route path='/kalkulator-siklus-tidur' element={<AplikasiTidur />} />
       <Route path='/kalkulator-rokok' element={<AplikasiRokok />} />
+      <Route path='/kalkulator-kafein' element={<AplikasiKafein />} />
       <Route path='*' element={<HomepagePages />} />
     </Routes>
   );
