@@ -1,11 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Energi, Expresso, Kopi, Soda, Teh, TehHijau } from '../../assets';
 import { FormLayout } from '../../layout';
 import TitleKafein from '../title/TitleKafein';
 
 const FormKalkulatorKafein = () => {
   const [status, setStatus] = useState(false);
+  const [info, setInfo] = useState({
+    total: '',
+    dosis: 'remaja',
+    dosisInfo: '',
+  });
   const [result, setResult] = useState([]);
+  const [total, setTotal] = useState(0);
   const [items] = useState([
     {
       nama: 'Kopi',
@@ -68,6 +74,7 @@ const FormKalkulatorKafein = () => {
     update[index].qty++;
     const filteredUpdate = update.filter((element) => element.qty > 0);
     setResult(filteredUpdate);
+    setInfo({ ...info, total: 'tambah' });
   };
 
   const kurang = (index) => {
@@ -75,7 +82,44 @@ const FormKalkulatorKafein = () => {
     update[index].qty--;
     const filteredUpdate = update.filter((element) => element.qty > 0);
     setResult(filteredUpdate);
+    setInfo({ ...info, total: 'kurang' });
   };
+
+  const dosisHandler = (e) => {
+    setInfo({ ...info, dosis: e.target.value });
+    const dosis = {
+      remaja: 100,
+      dewasa: 400,
+      hamil: 200,
+    };
+    if (total > dosis[e.target.value]) {
+      setInfo({ ...info, dosis: 'bahaya' });
+    }
+
+    console.log(info.dosisInfo);
+  };
+
+  useEffect(() => {
+    if (result.length > 0) {
+      result.forEach((e) => {
+        if (info.total == 'tambah') {
+          setTotal(total + e.kafein * 1);
+        } else if (info.total == 'kurang') {
+          setTotal(total - e.kafein * 1);
+        }
+      });
+    } else {
+      setTotal(0);
+    }
+    const dosis = {
+      remaja: 100,
+      dewasa: 400,
+      hamil: 200,
+    };
+    if (total > dosis[info.dosis]) {
+      setInfo({ ...info, dosis: 'bahaya' });
+    }
+  }, [result]);
 
   return (
     <FormLayout>
@@ -117,9 +161,7 @@ const FormKalkulatorKafein = () => {
                     <p>{item.nama}</p>
                     <p className='justify-self-center'>{item.qty}</p>
                     <div className='flex gap-x-2 justify-self-end'>
-                      <p>
-                        {item.kafein} {item.satuan}
-                      </p>
+                      <p>{item.kafein * item.qty} mg</p>
                       <button className='font-semibold hover:text-red-500' onClick={() => kurang(index)}>
                         &times;
                       </button>
@@ -137,8 +179,25 @@ const FormKalkulatorKafein = () => {
             )}
           </div>
         </div>
-        <div className='self-end border-y border-dashed border-gray-500 py-2'>
-          <h2 className='text-left text-2xl font-semibold'>TOTAL : </h2>
+        <div className='self-end'>
+          <div className='text-left'>
+            <p className='text-xl'>Maksimal Rekomendasi Dosis:</p>
+            <div className='flex items-center text-xl'>
+              <select name='dosis' id='dosis' className='my-5 mr-4 px-5 py-2 outline-main' onChange={dosisHandler}>
+                <option value='remaja'>Remaja</option>
+                <option value='dewasa'>Dewasa</option>
+                <option value='hamil'>Hamil</option>
+              </select>
+              <p>200 mg</p>
+            </div>
+          </div>
+          <h2
+            className={`flex justify-between border-y border-dashed border-gray-500 py-2 text-2xl font-semibold ${
+              info.dosis == 'bahaya' ? 'text-red-500' : ''
+            }`}
+          >
+            TOTAL :<span className='text-right'>{total} mg</span>
+          </h2>
         </div>
       </div>
     </FormLayout>
