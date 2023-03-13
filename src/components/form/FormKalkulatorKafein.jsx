@@ -118,7 +118,7 @@ const FormKalkulatorKafein = () => {
                     <p className='justify-self-center'>{item.qty}</p>
                     <div className='flex gap-x-2 justify-self-end'>
                       <p>
-                        {item.kafein} {item.satuan}
+                        {item.kafein} {item.kafein * item.qty}
                       </p>
                       <button className='font-semibold hover:text-red-500' onClick={() => kurang(index)}>
                         &times;
