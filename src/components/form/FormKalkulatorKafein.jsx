@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Energi, Expresso, Kopi, Soda, Teh, TehHijau } from '../../assets';
 import { FormLayout } from '../../layout';
 import TitleKafein from '../title/TitleKafein';
@@ -6,6 +6,11 @@ import TitleKafein from '../title/TitleKafein';
 const FormKalkulatorKafein = () => {
   const [status, setStatus] = useState(false);
   const [result, setResult] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [kafeinLimit, setKafeinLimit] = useState({
+    limit: 400,
+    info: false,
+  });
   const [items] = useState([
     {
       nama: 'Kopi',
@@ -63,11 +68,18 @@ const FormKalkulatorKafein = () => {
     },
   ]);
 
+  const optDosis = [
+    { value: 400, label: 'Dewasa' },
+    { value: 200, label: 'Hamil' },
+    { value: 100, label: 'Remaja' },
+  ];
+
   const tambah = (index) => {
     const update = [...items];
     update[index].qty++;
     const filteredUpdate = update.filter((element) => element.qty > 0);
     setResult(filteredUpdate);
+    setTotal(filteredUpdate.reduce((acc, val) => acc + val.kafein * val.qty, 0));
   };
 
   const kurang = (index) => {
@@ -75,7 +87,20 @@ const FormKalkulatorKafein = () => {
     update[index].qty--;
     const filteredUpdate = update.filter((element) => element.qty > 0);
     setResult(filteredUpdate);
+    setTotal(filteredUpdate.reduce((acc, val) => acc + val.kafein * val.qty, 0));
   };
+
+  const dosisHandler = (e) => {
+    setKafeinLimit({ ...kafeinLimit, limit: e.target.value });
+  };
+
+  useEffect(() => {
+    if (total > kafeinLimit.limit) {
+      setKafeinLimit({ ...kafeinLimit, info: true });
+    } else {
+      setKafeinLimit({ ...kafeinLimit, info: false });
+    }
+  }, [kafeinLimit]);
 
   return (
     <FormLayout>
@@ -101,10 +126,12 @@ const FormKalkulatorKafein = () => {
       ) : (
         <TitleKafein />
       )}
-      <div className='relative mx-auto grid w-full items-start rounded-lg bg-gray-100 p-4 text-center text-gray-500 shadow-lg md:h-3/4 md:w-2/3'>
+      <div className='relative mx-auto grid w-full items-start rounded-lg bg-gray-50 p-4 text-center text-gray-500 shadow-lg md:h-3/4 md:w-2/3'>
         <div className='w-full self-start'>
           <h1 className='my-5 text-2xl font-semibold'>KALKULATOR KAFEIN</h1>
-          <div className='flex justify-between border-b border-dashed border-gray-500'>
+          <div
+            className={`${status ? '' : 'text-gray-50'} flex justify-between border-b border-dashed border-gray-500`}
+          >
             <p>ITEM</p>
             <p>QTY</p>
             <p>KAFEIN</p>
@@ -114,12 +141,10 @@ const FormKalkulatorKafein = () => {
               result.map((item, index) => {
                 return (
                   <div className='grid w-full grid-cols-3 items-center' key={index}>
-                    <p>{item.nama}</p>
+                    <p className=''>{item.nama}</p>
                     <p className='justify-self-center'>{item.qty}</p>
                     <div className='flex gap-x-2 justify-self-end'>
-                      <p>
-                        {item.kafein} {item.kafein * item.qty}
-                      </p>
+                      <p>{item.kafein * item.qty} mg</p>
                       <button className='font-semibold hover:text-red-500' onClick={() => kurang(index)}>
                         &times;
                       </button>
@@ -137,8 +162,37 @@ const FormKalkulatorKafein = () => {
             )}
           </div>
         </div>
-        <div className='self-end border-y border-dashed border-gray-500 py-2'>
-          <h2 className='text-left text-2xl font-semibold'>TOTAL : </h2>
+        <div className='self-end'>
+          {status && (
+            <div className='text-left'>
+              <p className='text-xl'>Maksimal Rekomendasi Dosis:</p>
+              <div className='flex items-center text-xl'>
+                <select
+                  name='dosis'
+                  id='dosis'
+                  className='my-5 mr-4 rounded-lg bg-gray-100 px-5 py-2 text-slate-500 outline-main'
+                  onChange={dosisHandler}
+                >
+                  {optDosis &&
+                    optDosis.map((item, index) => {
+                      return (
+                        <option value={item.value} key={index}>
+                          {item.label}
+                        </option>
+                      );
+                    })}
+                </select>
+                <p>: {kafeinLimit.limit} mg</p>
+              </div>
+            </div>
+          )}
+          <h2
+            className={`${
+              status ? '' : 'text-gray-50'
+            } flex justify-between border-y border-dashed border-gray-500 py-2 text-2xl font-semibold `}
+          >
+            TOTAL :<span className={`${kafeinLimit.info ? 'text-red-500' : ''} text-right`}>{total} mg</span>
+          </h2>
         </div>
       </div>
     </FormLayout>
