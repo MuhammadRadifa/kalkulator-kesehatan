@@ -11,6 +11,9 @@ module.exports = {
         secondary: '#2291DD',
         darkBlue: '#0079CC',
       },
+      backgroundImage: {
+        'pantai-meditasi': `url('src/assets/images/pantai.jpg')`,
+      },
     },
   },
   plugins: [],

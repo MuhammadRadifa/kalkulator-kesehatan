@@ -39,6 +39,9 @@ import Energi from './icons/energi.svg';
 import TehHijau from './icons/teh-hijau.svg';
 import Expresso from './icons/expresso.svg';
 import Kafein from './icons/kafein.svg';
+import Relax from './icons/relax.svg';
+import BgPantai from './images/pantai.jpg';
+import SeaWave from './audio/sea-wave.mp3';
 
 export {
   HeroImg,
@@ -82,4 +85,7 @@ export {
   TehHijau,
   Expresso,
   Kafein,
+  Relax,
+  BgPantai,
+  SeaWave,
 };

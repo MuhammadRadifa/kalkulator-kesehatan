@@ -14,7 +14,7 @@ const Sidebar = () => {
   return (
     <aside className='font-Poppins'>
       <div
-        className={`fixed left-0 top-0 right-0 z-10 mx-auto grid w-full grid-cols-3 items-center justify-between bg-white px-4 py-3 md:mx-0 md:w-72 md:grid-cols-1 md:px-0`}
+        className={`fixed left-0 top-0 right-0 z-10 mx-auto grid w-full grid-cols-3 items-center justify-between bg-white px-4 py-3 md:mx-0 md:w-72 md:grid-cols-1 md:bg-transparent md:px-0 md:backdrop-blur-sm`}
       >
         <div className='col-span-2 md:py-10'>
           <Link to={'/'}>
@@ -24,7 +24,7 @@ const Sidebar = () => {
         <div
           className={`absolute ${
             nav ? '-top-[1000px]' : 'top-0 text-4xl'
-          }  left-0 flex h-screen w-full flex-col justify-center bg-white bg-opacity-75 font-medium text-gray-700 duration-500 ease-in-out sm:static md:justify-start `}
+          }  left-0 flex h-screen w-full flex-col justify-center bg-white bg-opacity-75 font-medium text-gray-700 duration-500 ease-in-out sm:static md:justify-start md:bg-transparent `}
         >
           {dataAplikasi &&
             dataAplikasi.map((element, index) => {

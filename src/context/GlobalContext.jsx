@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { BedSleep, BMI, EmojiOK, Hidration, Kafein, Kalkulator, Smoke } from '../assets';
+import { BedSleep, BMI, EmojiOK, Hidration, Kafein, Kalkulator, Relax, Smoke } from '../assets';
 
 const GlobalContext = createContext();
 
@@ -49,7 +49,7 @@ const GlobalProvider = ({ children }) => {
       desc: 'Kalkulator hidrasi kami membantu Anda memperkirakan jumlah air yang dibutuhkan setiap hari berdasarkan berat badan. Ini membantu menjaga keseimbangan elektrolit dan mencegah dehidrasi, serta meningkatkan kinerja organ dankesehatan secara keseluruhan.',
       path: '/kalkulator-hidrasi',
       icon: Hidration,
-      color: 'border-lime-300',
+      color: 'border-sky-300',
     },
     {
       title: 'Kalkulator Kafein',
@@ -78,6 +78,13 @@ const GlobalProvider = ({ children }) => {
       path: '/kalkulator-kebahagiaan',
       icon: EmojiOK,
       color: 'border-pink-300',
+    },
+    {
+      title: 'Meditasi',
+      desc: 'Membantu meningkatkan kesehatan mental: Meditasi adalah latihan mental yang dapat membantu mengurangi stres, kecemasan, dan depresi. Dengan aplikasi meditasi, Anda dapat melakukan latihan meditasi yang dapat membantu meningkatkan kesehatan mental dan emosional Anda.',
+      path: '/meditasi',
+      icon: Relax,
+      color: 'border-lime-300',
     },
   ];
 
