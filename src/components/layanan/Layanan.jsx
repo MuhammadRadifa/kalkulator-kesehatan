@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { BMI, Burger, Hidration, Kalkulator } from '../../assets';
+import { HiArrowLongRight } from 'react-icons/hi2';
 import Button from '../button/Button';
+import { GlobalContext } from '../../context/GlobalContext';
 
 const Layanan = () => {
+  const { dataAplikasi } = useContext(GlobalContext);
   return (
-    <section id='layanan' className='bg-gray-100 font-Poppins'>
+    <section id='layanan' className='bg-gray-50 font-Poppins'>
       <div className='container mx-auto py-20 px-4 sm:px-0 sm:py-40'>
         <div className='mb-12 text-center'>
           <h2 className='font-black text-main sm:text-2xl'>LAYANAN</h2>
@@ -13,63 +15,31 @@ const Layanan = () => {
             Tubuh yang sehat berawal dari sesuatu yang sehat.
           </h3>
         </div>
-        <div>
-          <div
-            data-aos='fade-up'
-            className='mb-10 grid items-center justify-center pb-6 text-center shadow-md md:grid-cols-2 md:text-left md:shadow-none'
-          >
-            <div>
-              <img src={Kalkulator} alt='Kalkulator Kalori' className='mx-auto mb-6 w-32 md:w-40' />
-            </div>
-            <div>
-              <h2 className='mb-4 text-2xl font-semibold text-main sm:text-3xl'>Kalkulator Kalori</h2>
-              <p className='mb-4 text-sm text-gray-700 sm:text-base'>
-                Kalkulator kalori kami adalah alat yang membantu Anda menghitung kebutuhan kalori harian Anda
-                berdasarkan usia, tinggi, berat badan, dan tingkat aktivitas fisik. Dengan mengetahui kebutuhan kalori
-                Anda, Anda dapat mengontrol asupan kalori Anda dan menjaga berat badan yang sehat.
-              </p>
-              <Link to={'/kalkulator-kalori'}>
-                <Button>Coba Sekarang</Button>
-              </Link>
-            </div>
-          </div>
-          <div
-            data-aos='fade-up'
-            className='mb-10 grid items-center justify-center pb-6 text-center shadow-md md:grid-cols-2 md:text-left md:shadow-none'
-          >
-            <div className='sm:order-1'>
-              <img src={BMI} alt='Kalkulator BMI' className='mx-auto mb-6 w-32 md:w-40' />
-            </div>
-            <div>
-              <h2 className='mb-4 text-2xl font-semibold text-main sm:text-3xl'>Kalkulator BMI</h2>
-              <p className='mb-4 text-sm text-gray-700 sm:text-base'>
-                Kalkulator BMI kami adalah alat yang membantu Anda mengukur indeks massa tubuh (BMI) Anda. BMI adalah
-                ukuran yang digunakan untuk menentukan apakah berat badan Anda sehat untuk tinggi badan Anda.{' '}
-              </p>
-              <Link to={'/kalkulator-bmi'}>
-                <Button>Coba Sekarang</Button>
-              </Link>
-            </div>
-          </div>
-          <div
-            data-aos='fade-up'
-            className='mb-10 grid items-center justify-center pb-6 text-center shadow-md md:grid-cols-2 md:text-left md:shadow-none'
-          >
-            <div>
-              <img src={Hidration} alt='Cek Jumlah Kalori Makanan' className='mx-auto mb-6 w-32 md:w-40' />
-            </div>
-            <div>
-              <h2 className='mb-4 text-2xl font-semibold text-main sm:text-3xl'>Kalkulator Hidrasi</h2>
-              <p className='mb-4 text-sm text-gray-700 sm:text-base'>
-                Kalkulator hidrasi kami membantu Anda memperkirakan jumlah air yang dibutuhkan setiap hari berdasarkan
-                berat badan. Ini membantu menjaga keseimbangan elektrolit dan mencegah dehidrasi, serta meningkatkan
-                kinerja organ dan kesehatan secara keseluruhan.
-              </p>
-              <Link to={'/kalkulator-hidrasi'}>
-                <Button>Coba Sekarang</Button>
-              </Link>
-            </div>
-          </div>
+        <div className='flex flex-wrap justify-around'>
+          {dataAplikasi &&
+            dataAplikasi.map((element, index) => {
+              return (
+                <div key={index} className={`mb-6 w-full md:w-1/3 md:p-10`} data-aos='fade-up'>
+                  <div
+                    className={`${element.color} grid h-full rounded-lg border-t-8 bg-white p-10 text-slate-600 shadow-md`}
+                  >
+                    <div>
+                      <img src={element.icon} alt='Kalkulator' className='mx-auto w-28 md:mx-0 md:mb-0' />
+                      <h2 className='my-4 text-xl font-semibold md:text-3xl'>{element.title}</h2>
+                      <p className='mb-4 text-sm md:text-base'>{element.desc}</p>
+                    </div>
+                    <Link to={element.path} className='self-end'>
+                      <Button className={`group flex items-center gap-3 hover:opacity-90`}>
+                        Coba Sekarang{' '}
+                        <span className='text-xl font-bold group-hover:translate-x-2'>
+                          <HiArrowLongRight />
+                        </span>
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
         </div>
       </div>
     </section>
