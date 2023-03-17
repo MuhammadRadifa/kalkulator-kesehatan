@@ -28,6 +28,8 @@ import ResultKalkulatorTidur from './result/ResultKalkulatorTidur';
 import FormKalkulatorRokok from './form/FormKalkulatorRokok';
 import FormKalkulatorKafein from './form/FormKalkulatorKafein';
 import TitleKafein from './title/TitleKafein';
+import FormMeditasi from './form/FormMeditasi';
+import TitleMeditasi from './title/TitleMeditasi';
 
 export {
   Navbar,
@@ -60,4 +62,6 @@ export {
   FormKalkulatorRokok,
   FormKalkulatorKafein,
   TitleKafein,
+  FormMeditasi,
+  TitleMeditasi,
 };
