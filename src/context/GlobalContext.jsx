@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useRef, useState } from 'react';
 import { BedSleep, BMI, EmojiOK, Hidration, Kafein, Kalkulator, Relax, Smoke } from '../assets';
 
 const GlobalContext = createContext();
@@ -20,8 +20,32 @@ const GlobalProvider = ({ children }) => {
     });
   };
 
+  function useInterval(callback, delay) {
+    const savedCallback = useRef();
+
+    // Remember the latest callback.
+    useEffect(() => {
+      savedCallback.current = callback;
+    }, [callback]);
+
+    // Set up the interval.
+    useEffect(() => {
+      function tick() {
+        savedCallback.current();
+      }
+      if (delay !== null) {
+        let id = setInterval(tick, delay);
+        return () => clearInterval(id);
+      }
+    }, [delay]);
+  }
+
+  const twoDigits = (num) => String(num).padStart(2, '0');
+
   const handler = {
     onChangeHandler,
+    useInterval,
+    twoDigits,
   };
 
   const state = {

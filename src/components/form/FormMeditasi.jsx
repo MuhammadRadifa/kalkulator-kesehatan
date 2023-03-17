@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SeaWave } from '../../assets';
+import { SeaWave, blobAnimation } from '../../assets';
 import { FormLayout } from '../../layout';
 import { RelaxTimer } from '../../utils';
 import TitleMeditasi from '../title/TitleMeditasi';
@@ -52,8 +52,8 @@ const FormMeditasi = () => {
         >
           {status ? (
             <div className='flex flex-col items-center justify-center gap-24 text-white'>
-              <div className='relative flex h-52 w-52 items-center justify-center rounded-full border-8 border-white after:absolute after:h-full after:w-full after:animate-ping after:rounded-full after:border-8 after:border-white after:duration-1000'>
-                Hello World!
+              <div className='relative flex h-80 w-80 items-center justify-center'>
+                <img src={blobAnimation} alt='animation' className='w-full' />
                 <RelaxTimer durasi={pilihanDurasi} isPaused={isPaused} />
               </div>
               <button onClick={pauseHandler} className='rounded-full bg-white px-6 py-2 text-black shadow-sm'>

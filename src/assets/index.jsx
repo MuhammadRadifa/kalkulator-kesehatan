@@ -42,6 +42,7 @@ import Kafein from './icons/kafein.svg';
 import Relax from './icons/relax.svg';
 import BgPantai from './images/pantai.jpg';
 import SeaWave from './audio/sea-wave.mp3';
+import blobAnimation from './images/blobanimation.svg';
 
 export {
   HeroImg,
@@ -88,4 +89,5 @@ export {
   Relax,
   BgPantai,
   SeaWave,
+  blobAnimation,
 };

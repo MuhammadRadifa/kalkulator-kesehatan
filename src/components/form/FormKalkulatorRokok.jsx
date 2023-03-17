@@ -79,7 +79,7 @@ const FormKalkulatorRokok = () => {
                       <p>{item.text}</p>
                     </div>
                     <input
-                      className='h-12 rounded-lg p-2 text-center text-black outline-main md:w-28'
+                      className='h-12 rounded-lg bg-white p-2 text-center text-slate-700 outline-main md:w-28'
                       type='number'
                       name={item.name}
                       id={item.name}
