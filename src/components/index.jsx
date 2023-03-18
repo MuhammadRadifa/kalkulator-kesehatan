@@ -30,6 +30,9 @@ import FormKalkulatorKafein from './form/FormKalkulatorKafein';
 import TitleKafein from './title/TitleKafein';
 import FormMeditasi from './form/FormMeditasi';
 import TitleMeditasi from './title/TitleMeditasi';
+import TitleVitamin from './title/TitleVitamin';
+import FormKalkulatorVitamin from './form/FormKalkulatorVitamin';
+import ResultKalkulatorVitamin from './result/ResultKalkulatorVitamin';
 
 export {
   Navbar,
@@ -64,4 +67,7 @@ export {
   TitleKafein,
   FormMeditasi,
   TitleMeditasi,
+  TitleVitamin,
+  FormKalkulatorVitamin,
+  ResultKalkulatorVitamin,
 };

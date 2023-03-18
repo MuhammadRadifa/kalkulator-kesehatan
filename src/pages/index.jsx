@@ -9,6 +9,7 @@ import AplikasiTidur from './aplikasi-kalkulator-siklus-tidur/AplikasiTidur';
 import AplikasiRokok from './aplikasi-kalkulator-rokok/AplikasiRokok';
 import AplikasiKafein from './aplikasi-kalkulator-kafein/AplikasiKafein';
 import AplikasiMeditasi from './aplikasi-meditasi/AplikasiMeditasi';
+import AplikasiVitamin from './aplikasi-vitamin/AplikasiVitamin';
 
 export {
   HomepagePages,
@@ -22,4 +23,5 @@ export {
   AplikasiRokok,
   AplikasiKafein,
   AplikasiMeditasi,
+  AplikasiVitamin,
 };

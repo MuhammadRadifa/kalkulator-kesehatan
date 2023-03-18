@@ -43,6 +43,7 @@ import Relax from './icons/relax.svg';
 import BgPantai from './images/pantai.jpg';
 import SeaWave from './audio/sea-wave.mp3';
 import blobAnimation from './images/blobanimation.svg';
+import KapsulVitammin from './icons/kapsul-vitamin.svg';
 
 export {
   HeroImg,
@@ -90,4 +91,5 @@ export {
   BgPantai,
   SeaWave,
   blobAnimation,
+  KapsulVitammin,
 };

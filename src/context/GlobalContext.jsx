@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useRef, useState } from 'react';
-import { BedSleep, BMI, EmojiOK, Hidration, Kafein, Kalkulator, Relax, Smoke } from '../assets';
+import { BedSleep, BMI, EmojiOK, Hidration, Kafein, Kalkulator, KapsulVitammin, Relax, Smoke } from '../assets';
 
 const GlobalContext = createContext();
 
@@ -109,6 +109,13 @@ const GlobalProvider = ({ children }) => {
       path: '/meditasi',
       icon: Relax,
       color: 'border-lime-300',
+    },
+    {
+      title: 'Kalkulator Vitamin',
+      desc: 'Aplikasi ini dapat membantu pengguna untuk mengetahui kebutuhan vitamin harian mereka berdasarkan berat badan, tinggi, dan usia. Pengguna dapat menghitung kebutuhan vitamin tertentu seperti vitamin A, vitamin C, vitamin D, dan lainnya',
+      path: '/kalkulator-vitamin',
+      icon: KapsulVitammin,
+      color: 'border-amber-300',
     },
   ];
 
