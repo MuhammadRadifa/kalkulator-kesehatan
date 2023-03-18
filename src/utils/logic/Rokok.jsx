@@ -1,6 +1,4 @@
 const Rokok = ({ harga, isiKotakRokok, rokokHarian, tahun }) => {
-  console.log(harga, isiKotakRokok, rokokHarian, tahun, 'ROKOK');
-
   const totalBiaya = {
     mingguan: Math.floor(((rokokHarian * 7) / isiKotakRokok) * harga),
     bulanan: 0,

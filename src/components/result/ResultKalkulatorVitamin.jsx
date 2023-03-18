@@ -13,7 +13,7 @@ const ResultKalkulatorVitamin = ({ data, status }) => {
                 <p className='mb-4 text-3xl font-semibold text-slate-600'>
                   {item.vitamin} <span className='block text-lg text-slate-400 md:inline'>{item.satuan}</span>
                 </p>
-                <p className={`font-medium ${'text-' + item.color} text-base`}>{item.nama}</p>
+                <p className={`font-medium ${'text-' + item.color}`}>{item.nama}</p>
               </div>
             );
           })}

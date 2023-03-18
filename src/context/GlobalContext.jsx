@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useRef, useState } from 'react';
-import { BedSleep, BMI, EmojiOK, Hidration, Kafein, Kalkulator, KapsulVitammin, Relax, Smoke } from '../assets';
+import { BedSleep, BMI, EmojiOK, Hidration, Kafein, Kalkulator, KapsulVitammin, Relax, SadCry, Smoke } from '../assets';
 
 const GlobalContext = createContext();
 
@@ -116,6 +116,13 @@ const GlobalProvider = ({ children }) => {
       path: '/kalkulator-vitamin',
       icon: KapsulVitammin,
       color: 'border-amber-300',
+    },
+    {
+      title: 'Kalkulator Depresi',
+      desc: 'Aplikasi kalkulator depresi dapat membantu mengukur tingkat depresi seseorang dengan mengajukan beberapa pertanyaan untuk mengevaluasi perasaan, perilaku, dan gejala-gejala yang terkait dengan depresi.',
+      path: '/kalkulator-depresi',
+      icon: SadCry,
+      color: 'border-red-300',
     },
   ];
 

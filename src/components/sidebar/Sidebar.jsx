@@ -24,15 +24,15 @@ const Sidebar = () => {
         <div
           className={`absolute ${
             nav ? '-top-[1000px]' : 'top-0 text-4xl'
-          }  left-0 flex h-screen w-full flex-col justify-center bg-white bg-opacity-75 font-medium text-gray-700 duration-500 ease-in-out sm:static md:justify-start md:bg-transparent `}
+          }  left-0 grid h-screen w-full grid-cols-3 items-center justify-center bg-white bg-opacity-75 font-medium text-gray-700 duration-500 ease-in-out sm:static md:flex md:flex-col md:items-stretch md:justify-start md:bg-transparent `}
         >
           {dataAplikasi &&
             dataAplikasi.map((element, index) => {
               return (
                 <Link to={element.path} key={index}>
-                  <div className='group flex items-center gap-x-4 py-5 pl-4 hover:bg-main md:px-5'>
-                    <img src={element.icon} alt='Kalkulator Kalori' className='w-10' />
-                    <h2 className='text-lg font-semibold group-hover:text-white'>{element.title}</h2>
+                  <div className='group flex items-center gap-x-4 py-4 hover:bg-main md:px-5 md:pl-4'>
+                    <img src={element.icon} alt='Kalkulator Kalori' className='mx-auto w-20 md:mx-0 md:w-10' />
+                    <h2 className='hidden text-lg font-semibold group-hover:text-white md:block'>{element.title}</h2>
                   </div>
                 </Link>
               );

@@ -100,7 +100,7 @@ const FormKalkulatorKafein = () => {
     } else {
       setKafeinLimit({ ...kafeinLimit, info: false });
     }
-  }, [kafeinLimit]);
+  }, [kafeinLimit.limit, total]);
 
   return (
     <FormLayout>

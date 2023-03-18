@@ -33,6 +33,9 @@ import TitleMeditasi from './title/TitleMeditasi';
 import TitleVitamin from './title/TitleVitamin';
 import FormKalkulatorVitamin from './form/FormKalkulatorVitamin';
 import ResultKalkulatorVitamin from './result/ResultKalkulatorVitamin';
+import FormKalkulatorDepresi from './form/FormKalkulatorDepresi';
+import TitleDepresi from './title/TitleDepresi';
+import ResultKalkulatorDepresi from './result/ResultKalkulatorDepresi';
 
 export {
   Navbar,
@@ -70,4 +73,7 @@ export {
   TitleVitamin,
   FormKalkulatorVitamin,
   ResultKalkulatorVitamin,
+  FormKalkulatorDepresi,
+  TitleDepresi,
+  ResultKalkulatorDepresi,
 };

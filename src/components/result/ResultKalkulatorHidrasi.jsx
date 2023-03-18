@@ -3,10 +3,10 @@ import { Gelas, Water } from '../../assets';
 import { Result } from '../../layout';
 
 const ResultKalkulatorHidrasi = ({ status, data }) => {
-  const { liter, mili, berat, gelas } = data;
+  const { liter, mili, gelas } = data;
   const totalGelas = [];
   for (let i = 0; i < gelas; i++) {
-    totalGelas.push(<img src={Gelas} alt='Gelas' className='w-16' />);
+    totalGelas.push(<img key={i} src={Gelas} alt='Gelas' className='w-16' />);
   }
   return (
     <Result status={status}>

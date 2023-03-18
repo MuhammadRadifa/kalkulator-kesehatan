@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GlobalContext } from '../../context/GlobalContext';
 import { Result } from '../../layout';
 
 const ResultKalkulatorTidur = ({ status, data, jamTidur }) => {
+  const { handler } = useContext(GlobalContext);
+  const { twoDigits } = handler;
   const { jam, menit } = jamTidur;
+
   return (
     <Result status={status}>
       <div className='text-left'>
@@ -10,7 +14,7 @@ const ResultKalkulatorTidur = ({ status, data, jamTidur }) => {
         <p className='mb-11 text-xl'>
           Untuk bangun di jam{' '}
           <span className='font-medium'>
-            {jam < 10 ? `0${jam}` : jam}:{menit < 10 ? `0${menit}` : menit}
+            {twoDigits(jam)} : {twoDigits(menit)}
           </span>
           , kamu sebaiknya pergi tidur pada jam:
         </p>
@@ -18,7 +22,7 @@ const ResultKalkulatorTidur = ({ status, data, jamTidur }) => {
           {data &&
             data.map((d, index) => {
               return (
-                <div key={index} className='relative mb-4 rounded-lg bg-slate-200 p-6'>
+                <div key={index} className='relative mb-4 rounded-lg bg-slate-100 p-6'>
                   {index === 0 && (
                     <p className='absolute top-4 right-4 text-lg font-semibold text-yellow-500'>
                       Disarankan<span className='text-pink-500'>*</span>

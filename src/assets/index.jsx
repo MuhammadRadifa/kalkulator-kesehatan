@@ -44,6 +44,12 @@ import BgPantai from './images/pantai.jpg';
 import SeaWave from './audio/sea-wave.mp3';
 import blobAnimation from './images/blobanimation.svg';
 import KapsulVitammin from './icons/kapsul-vitamin.svg';
+import DepresiRingan from './icons/depressi-ringan.svg';
+import DepresiSedang from './icons/depressi-sedang.svg';
+import DepresiBerat from './icons/depressi-berat.svg';
+import DepresiSangatBerat from './icons/depressi-sangat-berat.svg';
+import TidakDepresi from './icons/tidak-depressi.svg';
+import SadCry from './icons/sad-cry.svg';
 
 export {
   HeroImg,
@@ -92,4 +98,10 @@ export {
   SeaWave,
   blobAnimation,
   KapsulVitammin,
+  DepresiRingan,
+  DepresiSedang,
+  DepresiBerat,
+  DepresiSangatBerat,
+  TidakDepresi,
+  SadCry,
 };
