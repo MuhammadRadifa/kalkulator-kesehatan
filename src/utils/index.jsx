@@ -5,5 +5,6 @@ import Rokok from './logic/Rokok';
 import Kebahagiaan from './logic/Kebahagiaan';
 import Tidur from './logic/Tidur';
 import RelaxTimer from './logic/RelaxTimer';
+import Depresi from './logic/Depresi';
 
-export { calories, BMI, KebutuhanAir, Rokok, Kebahagiaan, Tidur, RelaxTimer };
+export { calories, BMI, KebutuhanAir, Rokok, Kebahagiaan, Tidur, RelaxTimer, Depresi };

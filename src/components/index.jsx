@@ -30,6 +30,12 @@ import FormKalkulatorKafein from './form/FormKalkulatorKafein';
 import TitleKafein from './title/TitleKafein';
 import FormMeditasi from './form/FormMeditasi';
 import TitleMeditasi from './title/TitleMeditasi';
+import TitleVitamin from './title/TitleVitamin';
+import FormKalkulatorVitamin from './form/FormKalkulatorVitamin';
+import ResultKalkulatorVitamin from './result/ResultKalkulatorVitamin';
+import FormKalkulatorDepresi from './form/FormKalkulatorDepresi';
+import TitleDepresi from './title/TitleDepresi';
+import ResultKalkulatorDepresi from './result/ResultKalkulatorDepresi';
 
 export {
   Navbar,
@@ -64,4 +70,10 @@ export {
   TitleKafein,
   FormMeditasi,
   TitleMeditasi,
+  TitleVitamin,
+  FormKalkulatorVitamin,
+  ResultKalkulatorVitamin,
+  FormKalkulatorDepresi,
+  TitleDepresi,
+  ResultKalkulatorDepresi,
 };
