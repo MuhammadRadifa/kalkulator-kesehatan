@@ -50,6 +50,8 @@ import DepresiBerat from './icons/depressi-berat.svg';
 import DepresiSangatBerat from './icons/depressi-sangat-berat.svg';
 import TidakDepresi from './icons/tidak-depressi.svg';
 import SadCry from './icons/sad-cry.svg';
+import forestAudio from './audio/forest.mp3';
+import sunriseAudio from './audio/sunrise.mp3';
 
 export {
   HeroImg,
@@ -104,4 +106,6 @@ export {
   DepresiSangatBerat,
   TidakDepresi,
   SadCry,
+  forestAudio,
+  sunriseAudio,
 };

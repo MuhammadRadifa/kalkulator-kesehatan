@@ -13,6 +13,8 @@ module.exports = {
       },
       backgroundImage: {
         'pantai-meditasi': `url('src/assets/images/pantai.jpg')`,
+        'sunrise-meditasi': `url('src/assets/images/sunrise.jpg')`,
+        'forest-meditasi': `url('src/assets/images/forest.jpg')`,
       },
     },
   },
