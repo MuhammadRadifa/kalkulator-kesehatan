@@ -52,6 +52,7 @@ import TidakDepresi from './icons/tidak-depressi.svg';
 import SadCry from './icons/sad-cry.svg';
 import forestAudio from './audio/forest.mp3';
 import sunriseAudio from './audio/sunrise.mp3';
+import forest from './images/forest.jpg';
 
 export {
   HeroImg,
@@ -108,4 +109,5 @@ export {
   SadCry,
   forestAudio,
   sunriseAudio,
+  forest,
 };

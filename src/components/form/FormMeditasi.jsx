@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SeaWave, blobAnimation, forestAudio, sunriseAudio } from '../../assets';
+import { SeaWave, blobAnimation, forestAudio, sunriseAudio, forest } from '../../assets';
 import { FormLayout } from '../../layout';
 import { RelaxTimer } from '../../utils';
 import TitleMeditasi from '../title/TitleMeditasi';
@@ -37,6 +37,7 @@ const FormMeditasi = () => {
   const handleInput = (e) => {
     e.preventDefault();
     setStatus(true);
+    console.log(input.tema);
   };
 
   const durationHandler = (e) => {
@@ -55,13 +56,18 @@ const FormMeditasi = () => {
         </div>
         <div
           className={`${
-            status
-              ? `fixed top-0 left-0 h-screen w-full after:absolute after:-z-10 after:h-screen after:w-full after:bg-${input.tema} after:bg-center after:bg-no-repeat after:brightness-75`
-              : 'relative w-auto md:w-96'
+            status ? `` : 'relative w-auto md:w-96'
           } mx-auto flex items-center justify-center rounded-lg bg-main p-5 transition-all duration-1000 ease-in-out md:p-10 `}
         >
           {status ? (
             <div className='flex flex-col items-center justify-center gap-24 text-white'>
+              <img
+                src={forest}
+                alt='gambar'
+                className={`relative -z-10 h-screen ${
+                  status ? 'w-full translate-x-full' : '-translate-x-full'
+                } bg-center bg-no-repeat brightness-75`}
+              />
               <div className='relative flex h-80 w-80 items-center justify-center'>
                 <img src={blobAnimation} alt='animation' className='w-full' />
                 <RelaxTimer durasi={input.durasi} isPaused={isPaused} />

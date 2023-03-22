@@ -4,7 +4,7 @@ const Depresi = ({ state1, state2, state3, state4, state5, state6, state7 }) => 
   const skor = state1 + state2 + state3 + state4 + state5 + state6 + state7;
   let hasil = {};
 
-  if (skor === 0 && skor <= 4) {
+  if (skor >= 0 && skor <= 4) {
     hasil = {
       diagnosa: 'Tidak Depresi',
       desc: 'Skor ini menunjukkan bahwa seseorang tidak mengalami gejala depresi yang signifikan. Namun, hal ini tidak menjamin bahwa seseorang tidak memiliki masalah kesehatan mental lainnya.',

@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 * {
   @apply scroll-smooth duration-300 ease-in-out;
 }
