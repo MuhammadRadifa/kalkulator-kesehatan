@@ -54,27 +54,28 @@ const FormMeditasi = () => {
           <TitleMeditasi status={status} />
         </div>
         <div
-          className={`${
-            status
-              ? `fixed top-0 left-0 h-screen w-full after:absolute after:-z-10 after:h-screen after:w-full after:bg-${input.tema} after:bg-center after:bg-no-repeat after:brightness-75`
-              : 'relative w-auto md:w-96'
-          } mx-auto flex items-center justify-center rounded-lg bg-main p-5 transition-all duration-1000 ease-in-out md:p-10 `}
+          className={`${status
+            ? `fixed top-0 left-0 h-screen w-full after:absolute after:-z-10 after:h-screen after:w-full after:bg-${input.tema} after:bg-center after:bg-no-repeat after:brightness-75`
+            : 'relative w-auto md:w-96'
+            } mx-auto flex items-center justify-center rounded-lg bg-main p-5 transition-all duration-1000 ease-in-out md:p-10 `}
         >
           {status ? (
-            <div className='flex flex-col items-center justify-center gap-24 text-white'>
-              <div className='relative flex h-80 w-80 items-center justify-center'>
-                <img src={blobAnimation} alt='animation' className='w-full' />
-                <RelaxTimer durasi={input.durasi} isPaused={isPaused} />
+            <>
+              <div className='flex flex-col items-center justify-center gap-24 text-white'>
+                <div className='relative flex h-80 w-80 items-center justify-center'>
+                  <img src={blobAnimation} alt='animation' className='w-full' />
+                  <RelaxTimer durasi={input.durasi} isPaused={isPaused} />
+                </div>
+                <button onClick={pauseHandler} className='rounded-full bg-white px-6 py-2 text-black shadow-sm'>
+                  {isPaused ? 'Lanjut' : 'Jeda'}
+                </button>
+                <audio
+                  src={pilihan.tema.filter((e) => e.value == input.tema).map((item) => item.audio)}
+                  autoPlay
+                  loop
+                ></audio>
               </div>
-              <button onClick={pauseHandler} className='rounded-full bg-white px-6 py-2 text-black shadow-sm'>
-                {isPaused ? 'Lanjut' : 'Jeda'}
-              </button>
-              <audio
-                src={pilihan.tema.filter((e) => e.value == input.tema).map((item) => item.audio)}
-                autoPlay
-                loop
-              ></audio>
-            </div>
+            </>
           ) : (
             <form onSubmit={handleInput}>
               <div className='flex flex-col gap-10'>

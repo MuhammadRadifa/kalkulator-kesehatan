@@ -6,15 +6,15 @@ module.exports = {
       Poppins: ['Poppins'],
     },
     extend: {
-      colors: {
-        main: '#008BFF',
-        secondary: '#2291DD',
-        darkBlue: '#0079CC',
-      },
       backgroundImage: {
         'pantai-meditasi': `url('src/assets/images/pantai.jpg')`,
         'sunrise-meditasi': `url('src/assets/images/sunrise.jpg')`,
         'forest-meditasi': `url('src/assets/images/forest.jpg')`,
+      },
+      colors: {
+        main: '#008BFF',
+        secondary: '#2291DD',
+        darkBlue: '#0079CC',
       },
     },
   },
