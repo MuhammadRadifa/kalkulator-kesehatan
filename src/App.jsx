@@ -17,7 +17,7 @@ import {
 function App() {
   return (
     <Routes>
-      <Route path='/home' element={<HomepagePages />} />
+      <Route path='/' element={<HomepagePages />} />
       <Route path='/kalkulator-kalori' element={<AplikasiKalori />} />
       <Route path='/kalkulator-bmi' element={<AplikasiBMI />} />
       <Route path='/kalkulator-hidrasi' element={<AplkasiHidrasi />} />
@@ -28,7 +28,7 @@ function App() {
       <Route path='/meditasi' element={<AplikasiMeditasi />} />
       <Route path='/kalkulator-vitamin' element={<AplikasiVitamin />} />
       <Route path='/kalkulator-depresi' element={<AplikasiDepresi />} />
-      <Route path='*' element={<HomepagePages />} />
+      <Route path='*' element={<NotFound />} />
     </Routes>
   );
 }
