@@ -53,6 +53,8 @@ import SadCry from './icons/sad-cry.svg';
 import forestAudio from './audio/forest.mp3';
 import sunriseAudio from './audio/sunrise.mp3';
 import forest from './images/forest.jpg';
+import sunrise from './images/sunrise.jpg';
+import pantai from './images/pantai.jpg';
 
 export {
   HeroImg,
@@ -110,4 +112,6 @@ export {
   forestAudio,
   sunriseAudio,
   forest,
+  sunrise,
+  pantai,
 };
