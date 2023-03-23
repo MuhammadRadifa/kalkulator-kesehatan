@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SeaWave, blobAnimation, forestAudio, sunriseAudio } from '../../assets';
+import { SeaWave, blobAnimation, forestAudio, sunriseAudio, forest, pantai, sunrise } from '../../assets';
 import { FormLayout } from '../../layout';
 import { RelaxTimer } from '../../utils';
 import TitleMeditasi from '../title/TitleMeditasi';
@@ -23,9 +23,9 @@ const FormMeditasi = () => {
       },
     ],
     tema: [
-      { value: 'pantai-meditasi', label: 'Pantai', audio: SeaWave, bg: 'pantai-meditasi' },
-      { value: 'forest-meditasi', label: 'Hutan', audio: forestAudio, bg: 'forest-meditasi' },
-      { value: 'sunrise-meditasi', label: 'Matahari Terbit', audio: sunriseAudio, bg: 'sunrise-meditasi' },
+      { value: 'pantai-meditasi', label: 'Pantai', audio: SeaWave, bg: pantai },
+      { value: 'forest-meditasi', label: 'Hutan', audio: forestAudio, bg: forest },
+      { value: 'sunrise-meditasi', label: 'Matahari Terbit', audio: sunriseAudio, bg: sunrise },
     ],
   };
 
@@ -51,14 +51,20 @@ const FormMeditasi = () => {
     <div>
       <FormLayout>
         <div>
-          <TitleMeditasi status={status} />
+          <TitleMeditasi />
         </div>
         <div
-          className={`${status
-            ? `fixed top-0 left-0 h-screen w-full after:absolute after:-z-10 after:h-screen after:w-full after:bg-${input.tema} after:bg-center after:bg-no-repeat after:brightness-75`
-            : 'relative w-auto md:w-96'
-            } mx-auto flex items-center justify-center rounded-lg bg-main p-5 transition-all duration-1000 ease-in-out md:p-10 `}
+          className={`${
+            status ? `fixed top-0 left-0 h-screen w-full bg-transparent` : 'relative w-auto md:w-96'
+          } mx-auto flex items-center justify-center rounded-lg transition-all duration-1000 ease-in-out`}
         >
+          <img
+            src={pilihan.tema.filter((e) => e.value == input.tema).map((item) => item.bg)}
+            alt='gambar'
+            className={`fixed top-0 left-0 -z-10 h-screen object-cover duration-1000 ease-in-out md:w-full ${
+              status ? 'translate-x-0' : '-translate-x-full'
+            } brightness-75`}
+          />
           {status ? (
             <>
               <div className='flex flex-col items-center justify-center gap-24 text-white'>
@@ -78,7 +84,7 @@ const FormMeditasi = () => {
             </>
           ) : (
             <form onSubmit={handleInput}>
-              <div className='flex flex-col gap-10'>
+              <div className='flex flex-col gap-10 rounded-lg bg-main p-2 md:p-10'>
                 <div className='flex gap-10'>
                   {pilihan &&
                     Object.keys(pilihan).map((item, index) => {
