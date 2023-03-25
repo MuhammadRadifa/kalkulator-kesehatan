@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SeaWave, blobAnimation, forestAudio, sunriseAudio, forest, pantai, sunrise } from '../../assets';
 import { FormLayout } from '../../layout';
-import { RelaxTimer } from '../../utils';
+import { RelaxTimer, generateQuotes } from '../../utils';
 import TitleMeditasi from '../title/TitleMeditasi';
 
 const FormMeditasi = () => {
@@ -32,6 +32,7 @@ const FormMeditasi = () => {
   const [input, setInput] = useState({
     durasi: 900,
     tema: 'pantai-meditasi',
+    quotes: generateQuotes(),
   });
 
   const handleInput = (e) => {
@@ -67,7 +68,7 @@ const FormMeditasi = () => {
           />
           {status ? (
             <>
-              <div className='flex flex-col items-center justify-center gap-24 text-white'>
+              <div className='flex flex-col items-center justify-center gap-10 p-1 text-center text-white md:gap-24'>
                 <div className='relative flex h-80 w-80 items-center justify-center'>
                   <img src={blobAnimation} alt='animation' className='w-full' />
                   <RelaxTimer durasi={input.durasi} isPaused={isPaused} />
@@ -75,6 +76,7 @@ const FormMeditasi = () => {
                 <button onClick={pauseHandler} className='rounded-full bg-white px-6 py-2 text-black shadow-sm'>
                   {isPaused ? 'Lanjut' : 'Jeda'}
                 </button>
+                <p className='text-lg'>{generateQuotes()}</p>
                 <audio
                   src={pilihan.tema.filter((e) => e.value == input.tema).map((item) => item.audio)}
                   autoPlay
