@@ -37,7 +37,6 @@ const FormMeditasi = () => {
   const handleInput = (e) => {
     e.preventDefault();
     setStatus(true);
-    console.log(input.tema);
   };
 
   const durationHandler = (e) => {
