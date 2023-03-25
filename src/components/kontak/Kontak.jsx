@@ -39,7 +39,7 @@ const Kontak = () => {
                   name='name'
                   value={field.name}
                   placeholder='Masukkan nama anda'
-                  className='w-full rounded bg-slate-200 px-6 py-2'
+                  className='w-full rounded bg-slate-100 px-6 py-2'
                   onChange={onChangeHandler}
                 />
               </div>
@@ -50,14 +50,14 @@ const Kontak = () => {
                   name='email'
                   value={field.email}
                   placeholder='Masukkan email anda'
-                  className='w-full rounded bg-slate-200 px-6 py-2'
+                  className='w-full rounded bg-slate-100 px-6 py-2'
                   onChange={onChangeHandler}
                 />
               </div>
               <div className='mb-3'>
                 <h3 className='font-semibold text-main'>Pesan</h3>
                 <textarea
-                  className='h-52 w-full resize-none rounded bg-slate-200 p-6'
+                  className='h-52 w-full resize-none rounded bg-slate-100 p-6'
                   name='pesan'
                   value={field.pesan}
                   id='pesan'
