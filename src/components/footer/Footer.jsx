@@ -22,7 +22,7 @@ const Footer = () => {
               <a href='#tentang'>Tentang</a>
               <a href='#layanan'>Layanan</a>
               <a href='#kontak'>Kontak</a>
-              <Link to={'/disclaimer'}>Disclaimer</Link>
+              <a href={'/disclaimer'}>Disclaimer</a>
             </div>
           </div>
           <div className='sm:mx-auto'>

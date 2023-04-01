@@ -41,6 +41,7 @@ const Kontak = () => {
                   placeholder='Masukkan nama anda'
                   className='w-full rounded bg-slate-100 px-6 py-2'
                   onChange={onChangeHandler}
+                  required
                 />
               </div>
               <div className='mb-3'>
@@ -52,6 +53,7 @@ const Kontak = () => {
                   placeholder='Masukkan email anda'
                   className='w-full rounded bg-slate-100 px-6 py-2'
                   onChange={onChangeHandler}
+                  required
                 />
               </div>
               <div className='mb-3'>
@@ -65,6 +67,7 @@ const Kontak = () => {
                   rows='10'
                   placeholder='Masukkan pesan anda'
                   onChange={onChangeHandler}
+                  required
                 ></textarea>
               </div>
               <Button className='block w-full text-center'>Kirim</Button>

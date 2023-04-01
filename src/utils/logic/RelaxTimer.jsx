@@ -10,6 +10,9 @@ const RelaxTimer = ({ durasi, isPaused }) => {
     () => {
       if (timeLeft > 0) {
         setTimeLeft((prevState) => prevState - 1);
+      } else if (timeLeft == 0) {
+        window.location.reload();
+        window.scrollY(0, 0);
       }
     },
     isPaused ? null : 1000

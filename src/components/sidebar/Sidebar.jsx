@@ -5,6 +5,7 @@ import { GlobalContext } from '../../context/GlobalContext';
 
 const Sidebar = () => {
   const { dataAplikasi } = useContext(GlobalContext);
+
   const [nav, setNav] = useState(true);
 
   const handleNav = () => {
@@ -14,11 +15,11 @@ const Sidebar = () => {
   return (
     <aside className='font-Poppins'>
       <div
-        className={`fixed left-0 top-0 right-0 z-10 mx-auto grid w-full grid-cols-3 items-center justify-between bg-white px-4 py-3 mix-blend-screen md:mx-0 md:w-72 md:grid-cols-1 md:bg-transparent md:px-0 md:backdrop-blur-md`}
+        className={`fixed left-0 top-0 right-0 z-50 mx-auto grid w-full grid-cols-3 items-center justify-between px-4 py-3 md:mx-0 md:w-72 md:grid-cols-1 md:bg-transparent md:px-0 md:backdrop-blur-md lg:mix-blend-screen`}
       >
         <div className='col-span-2 md:py-10'>
           <Link to={'/'} onClick={() => window.scroll(0, 0)}>
-            <h1 className='text-xl font-bold text-main md:pl-5'>Kalkulator Kesehatan</h1>
+            <h1 className='border-white stroke-white text-xl font-bold text-main md:pl-5'>Kalkulator Kesehatan</h1>
           </Link>
         </div>
         <div

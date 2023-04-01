@@ -39,7 +39,7 @@ const FormMeditasi = () => {
   const handleInput = (e) => {
     e.preventDefault();
     setStatus(true);
-    window.scroll(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const durationHandler = (e) => {
@@ -63,7 +63,7 @@ const FormMeditasi = () => {
         </div>
         <div
           className={`${
-            status ? `fixed top-0 left-0 h-screen w-full bg-transparent` : 'relative w-auto md:w-96'
+            status ? `fixed top-0 left-0 z-40 min-h-screen w-full bg-transparent` : 'relative w-auto md:w-96'
           } mx-auto flex items-center justify-center rounded-lg transition-all duration-1000 ease-in-out`}
         >
           <img
@@ -75,7 +75,7 @@ const FormMeditasi = () => {
           />
           {status ? (
             <>
-              <div className='flex flex-col items-center justify-center gap-10 p-1 text-center text-white md:gap-24'>
+              <div className='flex min-h-screen flex-col items-center justify-center gap-10 p-1 text-center text-white md:gap-24'>
                 <div className='relative flex h-80 w-80 items-center justify-center'>
                   <img src={blobAnimation} alt='animation' className='w-full' />
                   <RelaxTimer durasi={input.durasi} isPaused={isPaused} />
@@ -95,8 +95,8 @@ const FormMeditasi = () => {
             </>
           ) : (
             <form onSubmit={handleInput}>
-              <div className='flex flex-col gap-10 rounded-lg bg-main p-2 md:p-10'>
-                <div className='flex gap-10'>
+              <div className='flex flex-col gap-10 rounded-lg bg-main p-4 md:p-10'>
+                <div className='flex gap-3'>
                   {pilihan &&
                     Object.keys(pilihan).map((item, index) => {
                       return (

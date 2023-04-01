@@ -1,7 +1,7 @@
 import React from 'react';
 import { HiArrowLongRight } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
-import { Button } from '../../components';
+import { Button, Footer } from '../../components';
 
 const Disclaimer = () => {
   const disclaimers = [
@@ -18,29 +18,32 @@ const Disclaimer = () => {
   ];
 
   return (
-    <div className='flex h-screen md:items-center'>
-      <div className='container mx-auto p-8 text-slate-600 md:px-0'>
-        <h1 className='mb-10 text-4xl font-semibold md:text-7xl'>Disclaimer</h1>
-        <ul>
-          {disclaimers &&
-            disclaimers.map((disclaimer, index) => {
-              return (
-                <li className='mb-4 list-disc text-sm md:text-xl' key={index}>
-                  {disclaimer}
-                </li>
-              );
-            })}
-        </ul>
-        <Link to={'/'} onClick={() => window.scroll(0, 0)} className='self-end'>
-          <Button className={`group flex items-center gap-3 hover:opacity-90`}>
-            Kembali ke Beranda{' '}
-            <span className='text-xl font-bold group-hover:translate-x-2'>
-              <HiArrowLongRight />
-            </span>
-          </Button>
-        </Link>
+    <>
+      <div className='flex min-h-screen md:items-center'>
+        <div className='container mx-auto p-8 text-slate-600 md:px-0'>
+          <h1 className='mb-10 text-4xl font-semibold md:text-7xl'>Disclaimer</h1>
+          <ul>
+            {disclaimers &&
+              disclaimers.map((disclaimer, index) => {
+                return (
+                  <li className='mb-4 list-disc text-sm md:text-xl' key={index}>
+                    {disclaimer}
+                  </li>
+                );
+              })}
+          </ul>
+          <Link to={'/'} onClick={() => window.scroll(0, 0)} className='self-end pb-10'>
+            <Button className={`group flex items-center gap-3 hover:opacity-90`}>
+              Kembali ke Beranda{' '}
+              <span className='text-xl font-bold group-hover:translate-x-2'>
+                <HiArrowLongRight />
+              </span>
+            </Button>
+          </Link>
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

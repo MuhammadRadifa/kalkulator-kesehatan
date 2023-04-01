@@ -17,7 +17,7 @@ const TitleMeditasi = ({ status }) => {
     <FormTitle status={status}>
       <img src={dataTitle.icon} alt='Kalkulator' className='mb-9 w-32' />
       <h1 className='mb-9 text-5xl font-semibold text-gray-700'>{dataTitle.title}</h1>
-      <p className='text-slate-400'>{dataTitle.desc}</p>
+      <p className='p-3 text-sm text-slate-400 md:p-0 md:text-base'>{dataTitle.desc}</p>
     </FormTitle>
   );
 };
