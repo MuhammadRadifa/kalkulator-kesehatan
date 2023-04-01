@@ -14,10 +14,10 @@ const Sidebar = () => {
   return (
     <aside className='font-Poppins'>
       <div
-        className={`fixed left-0 top-0 right-0 z-10 mx-auto grid w-full grid-cols-3 items-center justify-between bg-white px-4 py-3 md:mx-0 md:w-72 md:grid-cols-1 md:bg-transparent md:px-0 md:backdrop-blur-md`}
+        className={`fixed left-0 top-0 right-0 z-10 mx-auto grid w-full grid-cols-3 items-center justify-between bg-white px-4 py-3 mix-blend-screen md:mx-0 md:w-72 md:grid-cols-1 md:bg-transparent md:px-0 md:backdrop-blur-md`}
       >
         <div className='col-span-2 md:py-10'>
-          <Link to={'/'}>
+          <Link to={'/'} onClick={() => window.scroll(0, 0)}>
             <h1 className='text-xl font-bold text-main md:pl-5'>Kalkulator Kesehatan</h1>
           </Link>
         </div>
@@ -29,7 +29,7 @@ const Sidebar = () => {
           {dataAplikasi &&
             dataAplikasi.map((element, index) => {
               return (
-                <Link to={element.path} key={index}>
+                <Link to={element.path} onClick={() => window.scroll(0, 0)} key={index}>
                   <div className='group flex items-center gap-x-4 py-4 hover:bg-main md:px-5 md:pl-4'>
                     <img src={element.icon} alt='Kalkulator Kalori' className='mx-auto w-20 md:mx-0 md:w-10' />
                     <h2 className='hidden text-lg font-semibold group-hover:text-white md:block'>{element.title}</h2>

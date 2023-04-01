@@ -28,14 +28,14 @@ const Layanan = () => {
                       <h2 className='my-4 text-xl font-semibold md:text-3xl'>{element.title}</h2>
                       <p className='mb-4 text-sm md:text-base'>{element.desc}</p>
                     </div>
-                    <Link to={element.path} className='self-end'>
+                    <a href={element.path} className='self-end'>
                       <Button className={`group flex items-center gap-3 hover:opacity-90`}>
                         Coba Sekarang{' '}
                         <span className='text-xl font-bold group-hover:translate-x-2'>
                           <HiArrowLongRight />
                         </span>
                       </Button>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               );

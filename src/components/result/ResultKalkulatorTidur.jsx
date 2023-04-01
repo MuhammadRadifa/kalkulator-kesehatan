@@ -24,7 +24,7 @@ const ResultKalkulatorTidur = ({ status, data, jamTidur }) => {
               return (
                 <div key={index} className='relative mb-4 rounded-lg bg-slate-100 p-6'>
                   {index === 0 && (
-                    <p className='absolute top-4 right-4 text-lg font-semibold text-yellow-500'>
+                    <p className='absolute top-4 right-4 text-lg font-semibold text-yellow-400'>
                       Disarankan<span className='text-pink-500'>*</span>
                     </p>
                   )}

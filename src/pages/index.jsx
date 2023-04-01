@@ -11,6 +11,7 @@ import AplikasiKafein from './aplikasi-kalkulator-kafein/AplikasiKafein';
 import AplikasiMeditasi from './aplikasi-meditasi/AplikasiMeditasi';
 import AplikasiVitamin from './aplikasi-vitamin/AplikasiVitamin';
 import AplikasiDepresi from './aplikasi-kalkulator-depresi/AplikasiDepresi';
+import Disclaimer from './disclaimer/Disclaimer';
 
 export {
   HomepagePages,
@@ -26,4 +27,5 @@ export {
   AplikasiMeditasi,
   AplikasiVitamin,
   AplikasiDepresi,
+  Disclaimer,
 };

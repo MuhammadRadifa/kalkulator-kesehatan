@@ -12,6 +12,7 @@ import {
   AplikasiMeditasi,
   AplikasiVitamin,
   AplikasiDepresi,
+  Disclaimer,
 } from './pages';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
       <Route path='/meditasi' element={<AplikasiMeditasi />} />
       <Route path='/kalkulator-vitamin' element={<AplikasiVitamin />} />
       <Route path='/kalkulator-depresi' element={<AplikasiDepresi />} />
+      <Route path='/disclaimer' element={<Disclaimer />} />
       <Route path='*' element={<NotFound />} />
     </Routes>
   );
