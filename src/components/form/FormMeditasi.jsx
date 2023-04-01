@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { SeaWave, blobAnimation, forestAudio, sunriseAudio, forest, pantai, sunrise } from '../../assets';
 import { FormLayout } from '../../layout';
 import { RelaxTimer, generateQuotes } from '../../utils';
@@ -7,6 +7,7 @@ import TitleMeditasi from '../title/TitleMeditasi';
 const FormMeditasi = () => {
   const [status, setStatus] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const audioRef = useRef(null);
   const pilihan = {
     durasi: [
       {
@@ -32,12 +33,13 @@ const FormMeditasi = () => {
   const [input, setInput] = useState({
     durasi: 900,
     tema: 'pantai-meditasi',
-    quotes: generateQuotes(),
+    quote: generateQuotes(),
   });
 
   const handleInput = (e) => {
     e.preventDefault();
     setStatus(true);
+    window.scroll(0, 0);
   };
 
   const durationHandler = (e) => {
@@ -46,6 +48,11 @@ const FormMeditasi = () => {
 
   const pauseHandler = () => {
     setIsPaused(!isPaused);
+    if (isPaused) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+    }
   };
 
   return (
@@ -76,12 +83,14 @@ const FormMeditasi = () => {
                 <button onClick={pauseHandler} className='rounded-full bg-white px-6 py-2 text-black shadow-sm'>
                   {isPaused ? 'Lanjut' : 'Jeda'}
                 </button>
-                <p className='text-lg'>{generateQuotes()}</p>
-                <audio
-                  src={pilihan.tema.filter((e) => e.value == input.tema).map((item) => item.audio)}
-                  autoPlay
-                  loop
-                ></audio>
+                <p className='text-lg'>{input.quote}</p>
+                <audio autoPlay loop ref={audioRef}>
+                  <source
+                    src={pilihan.tema.filter((e) => e.value == input.tema).map((item) => item.audio)}
+                    type='audio/mpeg'
+                  />
+                  Browser kamu tidak support Tag Audio
+                </audio>
               </div>
             </>
           ) : (

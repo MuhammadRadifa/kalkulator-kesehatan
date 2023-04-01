@@ -6,7 +6,6 @@ import Button from '../button/Button';
 
 const ResultKalkulatorBMI = ({ status, data }) => {
   const { total, hasil, tinggi, berat, gender } = data;
-  console.info('baru');
   return (
     <Result status={status}>
       <h1 className='mb-9 text-6xl font-semibold text-gray-700'>Hasil Kalkulasi</h1>

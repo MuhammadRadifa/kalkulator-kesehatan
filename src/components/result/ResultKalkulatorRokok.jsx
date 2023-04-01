@@ -5,7 +5,7 @@ const ResultKalkulatorRokok = ({ status, data }) => {
   const { result, totalBiaya } = data;
   return (
     <Result status={status}>
-      <div className='text-left'>
+      <div className='text-left text-gray-600'>
         <h1 className='mb-9 text-6xl font-semibold text-gray-700'>Hasil Kalkulasi</h1>
         <h2 className='mb-4 text-2xl font-medium text-gray-700'>Total Biaya Rokok :</h2>
         <div className='mb-8 w-full text-left'>

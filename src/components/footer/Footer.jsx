@@ -1,6 +1,7 @@
 import React from 'react';
 import { FiFacebook } from 'react-icons/fi';
 import { AiOutlineGithub, AiOutlineInstagram } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -21,6 +22,7 @@ const Footer = () => {
               <a href='#tentang'>Tentang</a>
               <a href='#layanan'>Layanan</a>
               <a href='#kontak'>Kontak</a>
+              <Link to={'/disclaimer'}>Disclaimer</Link>
             </div>
           </div>
           <div className='sm:mx-auto'>

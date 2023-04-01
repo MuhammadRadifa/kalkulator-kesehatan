@@ -2,5 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 * {
-  @apply scroll-smooth duration-300 ease-in-out;
+  @apply scroll-smooth font-Poppins duration-300 ease-in-out;
 }

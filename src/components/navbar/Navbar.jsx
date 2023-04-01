@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [nav, setNav] = useState(true);
   const [isScroll, setIsScroll] = useState(false);
+
+  const listNav = ['tentang', 'layanan', 'kontak'];
 
   window.addEventListener('scroll', () => {
     window.scrollY > 0 ? setIsScroll(true) : setIsScroll(false);
@@ -29,24 +32,27 @@ const Navbar = () => {
             nav ? '-top-[1000px]' : 'top-0 text-4xl'
           }  left-0 flex h-screen w-full flex-col items-center justify-center gap-y-12 bg-white bg-opacity-75 font-medium text-gray-700 duration-500 ease-in-out sm:static sm:h-0 sm:w-auto sm:flex-row sm:justify-between`}
         >
-          <a
-            href='#tentang'
-            className='relative after:absolute after:bottom-0 after:left-0 after:w-full after:origin-left after:scale-0 after:border-b-2 after:border-main after:duration-300 after:ease-in-out hover:after:scale-100'
-          >
-            Tentang
-          </a>
-          <a
-            href='#layanan'
-            className='relative after:absolute after:bottom-0 after:left-0 after:w-full after:origin-left after:scale-0 after:border-b-2 after:border-main after:duration-300 after:ease-in-out hover:after:scale-100'
-          >
-            Layanan
-          </a>
-          <a
-            href='#kontak'
-            className='relative after:absolute after:bottom-0 after:left-0 after:w-full after:origin-left after:scale-0 after:border-b-2 after:border-main after:duration-300 after:ease-in-out hover:after:scale-100'
-          >
-            Kontak
-          </a>
+          {listNav &&
+            listNav.map((list, index) => {
+              return list === 'disclaimer' ? (
+                <Link
+                  to={'/disclaimer'}
+                  key={index}
+                  className='relative capitalize duration-75 after:absolute after:bottom-0 after:left-0 after:w-full after:origin-left after:scale-0 after:border-b-2 after:border-main after:duration-300 after:ease-in-out hover:after:scale-100'
+                  onClick={() => window.scroll(0, 0)}
+                >
+                  <p>{list}</p>
+                </Link>
+              ) : (
+                <a
+                  key={index}
+                  href={`#${list}`}
+                  className='relative capitalize after:absolute after:bottom-0 after:left-0 after:w-full after:origin-left after:scale-0 after:border-b-2 after:border-main after:duration-300 after:ease-in-out hover:after:scale-100'
+                >
+                  {list}
+                </a>
+              );
+            })}
         </div>
         <div className='justify-self-end'>
           <button onClick={handleNav} className='relative z-10 sm:hidden'>

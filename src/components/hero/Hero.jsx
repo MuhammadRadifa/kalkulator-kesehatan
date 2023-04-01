@@ -1,3 +1,4 @@
+import { HiArrowLongRight } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
 import { TypeAnimation } from 'react-type-animation';
 import { HeroImg } from '../../assets';
@@ -24,7 +25,12 @@ const Hero = () => {
               dan sehat
             </p>
             <Link to={'/kalkulator-kalori'}>
-              <Button>COBA SEKARANG</Button>
+              <Button className={`group flex items-center gap-3 hover:opacity-90`}>
+                Coba Sekarang{' '}
+                <span className='text-xl font-bold group-hover:translate-x-2'>
+                  <HiArrowLongRight />
+                </span>
+              </Button>
             </Link>
           </div>
           <div data-aos='fade-right' className='mx-auto'>
