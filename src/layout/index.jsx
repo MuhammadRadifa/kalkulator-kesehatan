@@ -1,4 +1,4 @@
-import Homepagelayout from './Homepage/Homepage';
+import Homepagelayout from './homepage/homepage';
 import Aplikasi from './aplikasi/Aplikasi';
 import Result from './result/Result';
 import FormLayout from './form/FormLayout';
