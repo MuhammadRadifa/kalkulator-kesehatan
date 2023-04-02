@@ -26,16 +26,16 @@ const Layanan = () => {
                     <div>
                       <img src={element.icon} alt='Kalkulator' className='mx-auto w-28 md:mx-0 md:mb-0' />
                       <h2 className='my-4 text-xl font-semibold md:text-3xl'>{element.title}</h2>
-                      <p className='mb-4 text-sm md:text-base'>{element.desc}</p>
+                      {/* <p className='mb-4 text-sm md:text-base'>{element.desc}</p> */}
                     </div>
-                    <a href={element.path} className='self-end'>
+                    {/* <a href={element.path} className='self-end'>
                       <Button className={`group flex items-center gap-3 hover:opacity-90`}>
                         Coba Sekarang{' '}
                         <span className='text-xl font-bold group-hover:translate-x-2'>
                           <HiArrowLongRight />
                         </span>
                       </Button>
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               );
